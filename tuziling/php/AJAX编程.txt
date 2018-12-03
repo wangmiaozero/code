@@ -1,0 +1,176 @@
+什么是AJAX
+
+局部刷新,异步加载!!
+
+
+AJAX编程
+不是新的语言,而是对现有持术的综合利用.
+
+作用:
+1.交互功能
+2.边判断边刷新,请求服务器,局部更新页面数据
+
+异步:
+1.不会阻塞其他程序执行
+2.同时做多件事
+
+XMLHttpRequest对象
+
+API 详解
+
+
+
+xhr.open() 发起请求，可以是get、post方式
+
+
+xhr.setRequestHeader() 设置请求头
+
+
+xhr.send() 发送请求主体get方式使用xhr.send(null)
+
+
+xhr.onreadystatechange = function () {} 监听响应状态
+
+readstate 属性有五个状态：
+
+
+- xhr.readyState = 0时，（未初始化）还没有调用send()方法
+
+- xhr.readyState = 1时，（载入）已调用send()方法，正在发送请求
+
+
+- xhr.readyState = 2时，（载入完成）send()方法执行完成，已经接收到全部响应内容
+
+- xhr.readyState = 3时，（交互）正在解析响应内容
+
+- xhr.readyState = 4时，（完成）响应内容解析完成，可以在客户端调用了
+
+
+1.7  jQuery中的Ajax
+
+jQuery为我们提供了更强大的Ajax封装
+
+
+s
+$.ajax({}) 可配置方式发起Ajax请求
+
+
+$.get() 以GET方式发起Ajax请求
+
+
+$.post() 以POST方式发起Ajax请求
+
+
+$('form').serialize()序列化表单（即格式化key=val&key=val）
+
+
+url 接口地址
+
+
+type 请求方式
+
+
+timeout 请求超时
+
+
+dataType 服务器返回格式
+
+
+data 发送请求数据
+
+
+beforeSend:function () {} 请求发起前调用
+
+
+success 成功响应后调用
+
+
+error 错误响应时调用
+
+
+complete 响应完成时调用（包括成功和失败）
+
+
+json_encode()和json_decode() 的区别
+json_encode() 对变量进行JSON编码
+json_decode() 对JSON数据进行解码，转换为PHP变量
+
+json_decode( )? ? ----?json?转 对象/数组
+当第二个参数为true返回 array ,默认是false返回object。
+
+json_encode( )? ? ---- 对象/数组 转?json
+成功返回 json 编码的 string?,失败返回 false?。
+
+json_encode()和json_decode() 的区别
+json_encode() 对变量进行JSON编码
+json_decode() 对JSON数据进行解码，转换为PHP变量
+
+json_decode( )? ? ----?json?转 对象/数组
+当第二个参数为true返回 array ,默认是false返回object。
+
+json_encode( )? ? ---- 对象/数组 转?json
+成功返回 json 编码的 string?,失败返回 false?
+
+
+模板引擎:
+1.减少字符串拼接,简化代码
+2.使用用户界面与业务数据分离出来,它用于生成特定网页结构
+
+作用:为了动态渲染时候,简化字符串的拼接
+---------------------------------
+1、什么是同源？
+同源策略是浏览器的一种安全策略，
+
+所谓同源是指，协议, 域名，端口完全相同。
+2、什么是跨域？
+不同源则跨域
+3、跨域的几种类型
+1-不允许进行DOM操作
+2-不能进行ajax请求
+
+概念：
+JSONP：JSON with Padding
+JSONP是JSON的一种使用模式，主要作用：解决浏览器跨域请求的问题。
+
+原理剖析：
+其本质是利用了<script src=""></script>标签具有可跨域的特性，由服务端返回一个预先定义好的Javascript函数的调用，并且将服务器数据以该函数参数的形式传递过来，此方法需要前后端配合完成。
+-------------------------------------------
+1.主要是利用了script标签的天然的跨域特性来发送请求
+ 2.它的实现方式：在发送请求的时候传递一个函数名称给后台，后台返回数据的时候会返回这个函数的调用形式，并且在()中拼接参数
+3.ajax和jsonp的本质不一样。ajax的核心是通过XMLHttpRequest来发送请求，而jsonp是通过script标签来实现请求的发送
+
+----------------<接口对接>-------------------------------
+天气接口：
+
+
+
+  url:"http://api.map.baidu.com/telematics/v3/weather",
+ 
+ http://lbsyun.baidu.com/index.php?title=car/api/weather
+
+
+天气预报的密钥：zVo5SStav7IUiVON0kuCogecm87lonOj
+
+
+
+百度API：
+
+
+http://apistore.baidu.com/
+
+
+密钥：
+
+21f068f20fd5b7ca99c8908c1ae9f2bb
+
+ 
+
+
+
+图灵机器人：
+http://www.tuling123.com/register/index.jhtml
+
+
+---------------</接口对接>-------------------------------
+
+

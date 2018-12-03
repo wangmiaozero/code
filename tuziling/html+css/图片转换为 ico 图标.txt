@@ -1,0 +1,9 @@
+ http://www.bitbug.net/。  比特虫
+
+代码：  <link rel="shortcut icon" href="favicon.ico"  type="image/x-icon"/> 
+
+1. 她（它）是显示在浏览器中的网页图标。
+2. 它是图标形式，不是一个图片
+3. 位置是放到 head 标签中间。
+4. 后面的type="image/x-icon"  属性可以省略。（我相信你也愿意省略。）
+5. 为了兼容性，请将favicon.ico 这个图标放到根目录下。（我们就不要任性了，听话放位置，省很多麻烦。。你好，我也好。

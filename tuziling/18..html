@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Dog(name, age, gender, color) {
+            this.name = name;
+            this.age = age;
+            this.gender = gender;
+            this.color = color;
+        }
+
+
+        //A 给构造函数Dog的原型添加extend方法（即混入方法）
+        Dog.prototype.extend = function() {
+            var child = Dog.prototype;
+            for (var i = 0; i < arguments.length; i++) {
+                for (var key in arguments[i]) {
+                    if (arguments[i].hasOwnProperty(key)) {
+                        child[key] = arguments[i][key];
+                    }
+                }
+            }
+            return child;
+        };
+
+
+        //B 给构造函数Dog的原型混入另一个对象，该对象包含shoot方法，run方法，如下： 
+
+        // {
+        //     shoot: function() {
+        //         console.log(“汪汪汪”)；
+        //     },
+        //     run: function() {
+        //         console.log(this.name + “跑的飞快”);
+        //     }
+        // }
+        var obj = {
+            shoot: function() {
+                console.log("汪汪汪");
+            },
+            run: function() {
+                console.log(this.name + "跑的飞快");
+            }
+        }
+
+        Dog.prototype.extend(obj);
+
+        //C 创建一个实例对象bigYellow(名字是大黄，年龄3岁，性别是母，颜色是黄色) 
+
+        var bigYellow = new Dog("大黄", 3, "母", "黄色");
+
+        //D 使用实例对象bigYellow调用shoot和run方法
+
+        bigYellow.shoot();
+        bigYellow.run();
+        console.dir(Dog)
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+www.layui.com/doc/element/form.html  框架
+
+https:icomoon.io/app/#/select  图标ku
+
+https://www.layui.com/ 经典前端框架
+
+http://www.bootcss.com/ 外国网站 bootstrap
+
+https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array  MDN查询网站
+http://www.iconfont.cn/阿里巴巴矢量图标库
+https://www.imooc.com/ 慕课网
+http://www.runoob.com/ 菜鸟教程
+http://www.58pic.com/ 设计师网站
+https://www.lanzous.com/i1zbh2b 破解版百度网盘
+https://jquery.com/    jquery网站
+http://api.jquery.com/    APIjquery
+http://api.jquery.com/resources/api.xml  
+https://jqueryui.com/
+
+天气接口：
+
+http://lbsyun.baidu.com/index.php?title=car/api/weather
+
+
+
+天气预报的密钥：zVo5SStav7IUiVON0kuCogecm87lonOj
+
+
+
+百度API：
+
+http://apistore.baidu.com/
+
+
+
+密钥：
+
+21f068f20fd5b7ca99c8908c1ae9f2bb
+
+ 
+
+
+
+图灵机器人：http://www.tuling123.com/register/index.jhtml

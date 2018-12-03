@@ -1,0 +1,43 @@
+2.鼠标小手
+		cursor:pointer;
+	3.取消轮廓线
+		outline:none; outline:0;
+
+	4.取消文本域缩放
+		resize:none;
+
+	5.垂直方向居中
+		vertical-align:middle;  当行内块与文字在一起的时候,默认基线对齐,给图片或表单
+                 vertical-align:middle
+		让行内块元素浮动 + margin调整
+		实在不行,就给标签,然后再调整
+		还不行,只能上定位了
+	6.解决图片缝隙的问题
+		1.给图片vertical-align:middle;
+		2.给图片转换为块级元素  display:block; 
+	7.溢出显示省略号(3个属性一起配合使用)
+		white-space:nowrap; 强制一行显示
+		overflow:hidden;   隐藏溢出
+		text-overflow:ellipsis; 显示省略号
+		注意: 以上代码只对单行文字有效.
+	
+	8.精灵图
+		精灵图是什么?  将多张小图放在一张大图的技术.
+		精灵图怎么用?  必须是用背景图+ background-position: -X轴 -Y轴;
+
+		精灵图使用步骤:
+			1.找到精灵图上需要的图标,测量宽高 X,Y
+			2.在页面上添加一个跟测量宽高一样的盒子
+			3.给该盒子设置背景图片,并调整XY轴坐标
+		精灵图的制作:
+			1.新建一个透明画布
+			2.将需要的图片摆放到合适的位置
+			3.导出图片为png格式,并保留PSD
+
+	9.滑动门
+		滑动门: 模拟当文字增多,两边的圆角不变.
+		现在很容易实现,因为有border-radius
+
+	
+	position:relative =  float + 清除浮动  + 在原位置不动 + 方位移动
+		

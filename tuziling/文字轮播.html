@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+<div class="scrollNews">
+    <ul>
+        <li><a href="#" class="tooltip" title="甜美宽松毛衣今秋一定红.">甜美宽松毛衣今秋一定红.</a></li>
+        <li><a href="#" class="tooltip" title="秋装百搭小马甲不到50元.">秋装百搭小马甲不到50元.</a></li>
+        <li><a href="#" class="tooltip" title="修身韩版小西装万人疯抢.">修身韩版小西装万人疯抢.</a></li>
+        <li><a href="#" class="tooltip" title="夏末雪纺店主含泪大甩卖.">夏末雪纺店主含泪大甩卖.</a></li>
+        <li><a href="#" class="tooltip" title="瑞丽都疯狂推荐的秋装.">瑞丽都疯狂推荐的秋装.</a></li>
+        <li><a href="#" class="tooltip" title="48元长款针织小开衫卖疯啦.">48元长款针织小开衫卖疯啦.</a></li>
+        <li><a href="#" class="tooltip" title="长袖雪纺衫单穿内搭都超美.">长袖雪纺衫单穿内搭都超美.</a></li>
+    </ul>
+</div>
+<script src="jquery-1.12.2.js"></script>
+<script>
+    //字体无缝轮播
+$(function(){
+            //定义div的class属性
+            var $this = $(".scrollNews");
+            //定义一个定时器的属性
+            var scrollTimer;
+            //鼠标悬停在页面上时页面停止翻转
+            $this.hover(function () {
+                //清除定时器
+                clearInterval(scrollTimer);
+                //鼠标离开时，页面继续翻转
+            }, function () {
+                scrollTimer = setInterval(function () {
+                    scrollNews($this);
+                }, 2000);
+            }).trigger("mouseout");
+            //定义一个属性
+            function scrollNews(nature) {
+                //文字从ul第一个开始轮转
+                var scroll = nature.find("ul:first");
+                //定义li的第一个文字的高度
+                var lineHeight = scroll.find("li:first").height();
+                scroll.animate({ "margin-top": -lineHeight + "px" }, 600, function () {
+                    scroll.css({ "margin-top": "0px" }).find("li:first").appendTo(scroll);
+                });
+            }
+});
+
+
+</script>
+</body>
+</html>

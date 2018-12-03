@@ -1,0 +1,292 @@
+
+
+什么是html5
+1.H5不是新语言,是第五次修改的版本
+
+2.支持所有主流浏览器(IE9以上支持H5,ie8一下不支持)
+
+3.改变了用户与文档交互方式:多媒体 video audio canvas 
+
+4.增加其它的新特性:语义特性,本地存储特性,网页多媒体,二维三维,特效(过度,动画)
+
+5.相对于h4:
+	1:进步:抛弃了不常用的标记
+	2.新增:新增标记和属性
+	3.结构简洁
+
+html:xt +tab
+html5 是一套规范
+-------------------------------------------
+width:100% 流失布局 || 百分布局
+
+解决ie8兼容性问题:引进JS文件或者更改属性
+电话 tel 弹出数字键盘
+
+form:myForm 指定表单 
+
+-------------------------------
+码云上传
+git clone url地址
+git add * 将代码上传到本地仓库
+git commit -m '必须写的注释'
+git push
+
+1.在码云上创建项目
+2.复制项目地址
+3.四步走
+
+https://gitee.com/tuziling84/code.git
+-------------------------------------
+   <!--autofocus:自动获取焦点-->
+    <!--autocomplete:自动完成：on:打开  off:关闭
+    1.必须成功提交过:提交过才会记录
+    2.当前添加autocomplete的元素必须有name属性-->
+    用户名：<input type="text" name="userName" placeholder="请输入用户名" autofocus autocomplete="on"> <br>
+    <!--tel并不会实现验证，仅仅是在移动端能够弹出数字键盘-->
+    <!--required:必须输入，如果没有输入则会阻止当前数据提交-->
+    <!--pattern:正则表达式验证
+    *:代表任意个
+    ?:代表0个或1个
+    +：代表1个或多个-->
+    手机号：<input type="tel" name="userPhone" required pattern="^(\+86)?1\d{10}$"> <br>
+    <!--multiple：可以选择多个文件-->
+    文件：<input type="file" name="photo" multiple> <br>
+    <!--email:有默认验证  在email中，multiple允许输入多个邮箱地址，以逗号分隔-->
+    邮箱：<input type="email" name="email" multiple><br>
+    
+    <!--提交：-->
+    <input type="submit"> <br>
+</form>
+<!--下面这个表单元素并没有包含在form中：默认情况下面表单元素的数据不会进行提交-->
+<!--form:指定表单id,那么在将来指定id号的表单进行数据提交的时候，也会将当前表单元素的数据一起提交-->
+地址：<input type="text" name="address" form="myForm">
+
+
+ <!--建立输入框与datalist的关联  list="datalist的id号"-->
+    专业：<input type="text" list="subjects"> <br>
+    <!--通过datalist创建选择列表-->
+    <datalist id="subjects">
+        <!--创建选项值：value:具体的值 label:提示信息，辅助值-->
+        <!--option可以是单标签也可以是双标签-->
+        <option value="英语" label="不会"/>
+        <option value="前端与移动开发" label="前景非常好"></option>
+        <option value="java" label="使用人数多"></option>
+        <option value="javascript" label="做特效"></option>
+        <option value="c" label="不知道"></option>
+    </datalist>
+
+    网址：<input type="url" list="urls">
+    <datalist id="urls">
+        <!--如果input输入框的type类型是url,那么value值必须添加http://-->
+        <option value="http://www.baidu.com" label="百度"></option>
+        <option value="http://www.sohu.com"></option>
+        <option value="http://www.163.com"></option>
+    </datalist>
+
+-------------------------------
+fullscreen
+    1、js的兼容性处理   加前缀
+        google+apple+360+qq       内核：webkit
+        火狐                      内核：moz
+        欧朋                      内核：o
+        ie                        内核：ms
+    2、实现全屏和退出全屏对象不一样
+        实现全屏：具体对象调用     RequestFullScreen()方法
+        退出全屏：document对象调用 CancelFullScreen()方法
+    3、火狐最标准的 
+
+
+-------------------------
+oninput :监听当前指定元素
+onkeypu : 键盘弹起时候触发
+oninvalid :当验证不通过时触发
+
+
+进度条
+progress :  max  value
+meter
+-----------------------
+音频
+embed 直接插件视频文件:他的本质是条用本机上已经安装的软件,有兼容性
+
+flash 插件  安装flash 苹果设备不支持  增加学习成本
+
+<!--embed:可以直接插入音频视频，本质是通过本机安装的音频视频播放软件来播放的。要求必须已经安装了这些软件  兼容性-->
+
+<!--flash:  1.先学习flash,增加使用成本  2.iphone,ipd,不支持flash-->
+
+<!--audio:音频-->
+
+    <!-- <audio controls  autoplay>
+        <source src="./mp3/aa.mp3" type="audio/ogg">
+        <source src="./mp3/aa.mp3" type="audio/mpeg">
+    </audio> -->
+
+<!--
+src:播放文件的路径
+controls:音频播放器的控制器面板
+autoplay:自动播放
+loop:循环播放-->
+<!--<audio src="../mp3/aa.mp3" controls></audio>-->
+
+<!--video：视频-->
+<!--
+pause 暂停
+src:播放文件的路径
+controls:音频播放器的控制器面板
+autoplay:自动播放
+loop:循环播放
+poster:指定视频还没有完全下载完毕，或者用户没有点击播放前显示的封面。 默认显示当前视频文件的第一副图像
+width:视频的宽度
+height:视频的高度
+-->
+<!--注意事项：视频始终会保持原始的宽高比。意味着如果你同时设置宽高，并不是真正的将视频的画面大小设置为指定的大小，而只是将视频的占据区域设置为指定大小，除非你设置的宽高刚好就是原始的宽高比例。所以建议：在设置视频宽高的时候，一般只会设置宽度或者高度，让视频文件自动缩放-->
+<!--<video src="../mp3/mp4.mp4" poster="../images/l1.jpg" controls  height="600"></video>-->
+
+<!--source:因为不同的浏览器所支持的视频格式不一样，为了保证用户能够看到视频，我们可以提供多个视频文件让浏览器自动选择-->
+<!--<video muted src="../mp3/flv.flv" controls></video>-->
+
+------------------------------------
+
+1.ononline:网络连通的时候触发事件
+2.nooffline:网络断开触发
+
+全屏操作:
+required  必填
+
+	3c3ff6933cb1c09c87d09de335612321
+
+--------------------
+拖拽:
+e.preventDefault();阻止默认事件
+draggable 改变鼠标样式  拖拽
+--------------------------------
+sessionStorage
+生命周期:
+存储大小:5M
+关闭浏览器 数据不存在
+存储在浏览器当前页面内存中
+数据只能在当前页面
+sessionStorage.getItem("key",value)
+setItem(key,value):存储数据，以键值对的方式存储
+getItem(key):获取数据，通过指定名称的key获取对应的value值
+removeItem(key):删除数据，通过指定名称key删除对应的值
+clear():清空所有存储的内容
+
+
+JSON.stringify(arr2)   =========将数组转换成字符串  原理就是在数组身上打上一个引号
+JSON.parse(arr3)  ==============将字符串转换成数组对象    原理是把引号去掉
+-------------------------
+localStorage 同一个浏览器可以共享数据
+数据只能手动删除
+存储大小 : 20M
+数据存储在硬盘上
+setItem(key,value):存储数据，以键值对的方式存储
+getItem(key):获取数据，通过指定名称的key获取对应的value值
+removeItem(key):删除数据，通过指定名称key删除对应的值
+clear():清空所有存储的内容
+
+
+例子：
+
+//定义一个字符串
+
+var data='{"name":"goatling"}'
+
+//解析对象?
+
+?JSON.parse(data)
+
+结果是：
+
+?name:"goatling"
+
+JSON.stringify()【从一个对象中解析出字符串】
+
+var data={name:'goatling'}
+
+JSON.stringify(data)
+
+结果是：
+
+'{"name":"goatling"}'
+
+--------------------------
+用于被拖拽元素的事件
+ ondrag         应用于拖拽元素，整个拖拽过程都会调用--持续
+ ondragstart    应用于拖拽元素，当拖拽开始时调用
+ ondragleave    应用于拖拽元素，当鼠标离开拖拽元素时调用
+ ondragend      应用于拖拽元素，当拖拽结束时调用
+应用于目标元素的事件 
+ ondragenter    应用于目标元素，当拖拽元素进入时调用
+ ondragover     应用于目标元素，当停留在目标元素上时调用--持续
+ ondrop         应用于目标元素，当在目标元素上松开鼠标时调用
+ ondragleave    应用于目标元素，当鼠标离开目标元素时调用
+e.preventDefault(); 清除默认行为
+
+列如:
+<script>
+             var div1 = document.querySelector("#div1");
+            var div2 = document.querySelector("#div2");
+            //开始拖拽
+            document.ondragstart=function(e){
+                console.log(e);
+                e.dataTransfer.setData("text/html",e.target.id);
+            }
+            //持续拖拽
+            document.ondragover=function(e){
+                e.preventDefault();
+            }
+            //结束拖拽
+            document.ondrop=function(e){
+               var id=e.dataTransfer.getData("text/html");
+                e.target.appendChild(document.getElementById(id));
+            }
+        </script>
+
+
+---------------上传-----------------------
+multiple 多个文件上传
+ onabort:读取文件中断片时触发
+ onerror:读取错误时触发
+ onload:文件读取成功完成时触发
+ onloadend:读取完成时触发，无论成功还是失败
+ onloadstart:开始读取时触发
+ onprogress:读取文件过程中持续触发
+reader.onload=function(){
+ //console.log(reader.result); 读取的文件在读取对象的reader.result中
+    document.querySelector("img").src=reader.result;
+}
+reader.onprogress=function(e){
+    var percent= e.loaded/ e.total*100+"%";
+    div.style.width=percent;
+}
+
+如:
+ var myfile=document.querySelector("#myfile");
+        var div =document.querySelector("div");
+        myfile.onchange=function(){
+            div.innerHTML="";
+           var file=myfile.files;//获取个数
+          // console.log(file); 
+          for(var i = 0; i < file.length;i++){
+              var reader=new FileReader();
+            //  console.log(reader.readAsDataURL)
+            reader.readAsDataURL(file[i]);
+            reader.onload=function(e){
+                var img=document.createElement("img");
+               // cosnole.log(img);
+               img.src=e.target.result;
+                div.appendChild(img);
+            }
+          }
+        }
+
+
+
+
+
+
+
+
+

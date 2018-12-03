@@ -1,0 +1,16 @@
+行高 line-height  调整文字行高距离
+		首行缩进	text-indent:2em; 缩进2个字
+		文本装饰 	text-decoration:nome; 取消a标签下划线 underline添加下划线
+
+		颜色的表示方式;color
+		1颜色单词(red 红色 blue 蓝色 orange 橙色 green 绿色 yellow 黄色 skyblue 天蓝色 darkred 深红色)
+		2十六进制(#红绿蓝 00 00 00)	#000000;黑色 #ffffff;白色 #ff0000; #fff;
+		3rgb表示法rgb(0,0,0) (0-255) rgb(255,255,255)
+		4rgba表示 rgba(0,0,0,0.4);
+
+margin: auto auto;  边缘自动
+vertical-align: middle; 文字与图片对齐
+
+transparent 透明
+
+

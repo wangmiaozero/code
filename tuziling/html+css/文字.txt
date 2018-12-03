@@ -1,0 +1,32 @@
+text-indent: 20px;  2em 缩进
+letter-spacing   字符间距
+text-shadow   文字阴影
+	 box-shadow   盒子阴影
+ outline:none     取消外边线
+	 resize:none;      取消文本域缩放
+	vertical:middle;   垂直方向居中
+	word-break      自动换行
+	text-overflow    文字溢出
+
+
+ font          字体复合属性
+   font-size      字体大小
+   font-style     字体样式（是否斜体）
+   font-family    字体类别（宋体）
+   font-weight   字体粗细
+   color         字体颜色
+   line-height    字体行高
+
+background         背景复合属性
+   background-color    背景颜色
+   background-image   背景图片
+   background-repeat   背景平铺
+background-position  背景位置
+	 background-attachment 背景固定
+	 background-size      背景缩放
+
+7.溢出显示省略号(3个属性一起配合使用)
+		white-space:nowrap; 强制一行显示
+		overflow:hidden;   隐藏溢出
+		text-overflow:ellipsis; 显示省略号
+		注意: 以上代码只对单行文字有效.

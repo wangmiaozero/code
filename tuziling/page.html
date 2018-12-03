@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			
+		}
+		a {
+			text-decoration: none;
+		}
+		.page {
+			width: 1200px;
+			text-align: center;
+			margin: 0 auto;
+		}
+		.page_num a {
+			display: inline-block;
+			width: 43px;
+			border:1px solid #ccc;
+			line-height: 43px;
+		}
+		.page_num .pn_prev,
+		.page_num .pn_next{
+			width: 118px;
+			height: 43px;
+			border:1px solid #ccc;
+		}
+		.page_num .tp {
+			border:1px solid transparent;
+		}
+		.page_skip input {
+			vertical-align: top;
+			outline: none;
+			width: 43px;
+			line-height: 43px;
+			border:1px solid #ccc;
+		}
+		.page_skip button {
+			position: relative;
+			top: -2px;
+			width: 43px;
+			height: 43px;
+			border:1px solid #ccc;
+		}
+	</style>
+</head>
+<body>
+	<div class="page">
+		<span class="page_num">
+			<a href="#" class="pn_prev"><上一页</a>
+			<a href="#">1</a>
+			<a href="#" class="tp">2</a>
+			<a href="#">3</a>
+			<a href="#">4</a>
+			<a href="#">5</a>
+			<a href="#">6</a>
+			<a href="#" class="tp">...</a>
+			<a href="#" class=" pn_next">下一页></a>
+		</span>
+		<span class="page_skip">
+			共10页 到第<input type="text">页 <button>确定</button>
+		</span>
+	</div>
+	
+</body>
+</html>

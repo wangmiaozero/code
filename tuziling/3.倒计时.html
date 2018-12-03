@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            list-style: none;
+        }
+        .box{
+            /* width: 500px; */
+            text-align: center;
+            height: 100px;
+            /* border:1px solid red; */
+            margin:100px auto 0;
+            font-size: 40px;
+            font-family: '微软雅黑';
+           color: red;
+        }
+        .box span{
+            color:#fff;           
+            background-color:orange;
+            border-radius: 5px;            
+            padding:5px 10px;            
+        }
+        .box .tian{
+            background-color: #fff;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <span class="tian" id="tian">1天</span>
+        <span class="shi" id="shi">01时</span> :
+        <span class="fen" id="fen">01分</span> :
+        <span class="miao" id="miao">10秒</span>
+    </div>
+    <script>  
+        var tian = document.getElementById('tian') ;  
+        var shi = document.getElementById('shi') ;
+        var fen = document.getElementById('fen') ;
+        var miao = document.getElementById('miao') ; 
+        coutDown();   
+        //每隔1秒用一次
+        setInterval(coutDown,1000);
+        function coutDown(){
+
+        //设置目标时间
+        var endTime= new Date('2018-11-11 0:0:0');
+        //获取当前时间
+        var nowTime = new Date();
+        //计算时间差毫秒
+        var count=endTime - nowTime;
+        //将毫秒转成 天 时 分 秒 
+
+        var day=Math.floor(count/1000/60/60/24);
+        var hour=Math.floor(count/1000/60/60%24);
+        var minute = Math.floor(count/1000/60%60);
+        var second=Math.floor(count/1000%60);
+        //时分秒个位数补0
+        hour=hour<10?'0'+hour:hour;
+        miunte=minute<10?'0'+minute:minute;   
+        second=second< 10?'0'+second:second;
+        //将天 ,时 ,分秒直接写到标签中
+        tian.innerText=day+'天';  
+        shi.innerText=hour+'时';
+        fen.innerText=miunte+'分';
+        miao.innerText=second+'秒';  
+    }
+    </script>
+</body>
+</html>

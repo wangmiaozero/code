@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    function getRandom(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+        var suiji=getRandom(1,8);
+        console.log(suiji);
+        switch(suiji){
+            case 1:
+            console.log('内容中心:http://pvp.qq.com/raiders/');//许家莹
+            break;
+            case 2:
+            console.log('王者音乐听 http://pvp.qq.com/cp/a20180327music/index.html');//王朝
+            break;
+            case 3:
+            console.log('官方爆料站http://pvp.qq.com/coming/v2/');// 杜建勃
+            break;
+            case 4:
+            console.log('王者视角http://pvp.qq.com/cp/a20180808wzsj/index.htm');//张弛
+            break;
+            case 5:
+            console.log('赛事专区/赛事中心 http://pvp.qq.com/match/center.shtml?ADTAG=pvp.index.sszq');//叶子威
+            break;
+            case 6:
+            console.log('攻略中心http://pvp.qq.com/raiders/');//彭锐
+            break;
+            case 7:
+            console.log('游戏介绍http://pvp.qq.com/web201605/introduce.shtml');//邵静怡
+            break;
+            case 8:
+            console.log('英雄攻略 http://pvp.qq.com/strategy/');//周瑶
+            break;
+        }
+        
+    </script>
+</body>
+</html>

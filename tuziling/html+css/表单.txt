@@ -1,0 +1,33 @@
+表单
+				<form action="">
+
+				普通文本框 <input type="text" value="默认内容">
+				密码框:  <input type="password">
+				单选框:  <input type="radio" name="sex">
+				多选框:  <input type="checkbox" checked>
+				下拉菜单: 
+				   <select>
+					<option value="提交给后台的" selected>武汉</option>
+				   </select>
+				文本域: 也叫多行文本框
+					    <textarea></textarea>
+				提交按钮: 
+						<input type="submit" value="登录">
+						<input type="reset" value="清空">
+
+				普通按钮: <input type="button" value="登录">
+				图片按钮: <input type="image" src="图片地址">
+
+				文件上传: <input type="file">
+				
+
+				</form>
+				label标签: 实现点击文字让表单选中.
+					 1.直接使用label标签包裹文字和表单
+					 2.使用for id方式实现: label标签包裹文字,通过for属性和 表单上的id属性对应.
+
+				提交表单数据的两个必要条件:
+					1.必须有form标签
+					2.必须有submit提交
+
+				form表单域: 直接使用form标签,包裹需要提交的表单内容即可.

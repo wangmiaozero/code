@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./js/jquery.min.js"></script>
+</head>
+<body>
+    <ul>
+        <li ><input type="checkbox" data-price="111"  data-num="1">商品1  data-price="111"  data-num="1"</li>
+        <li><input type="checkbox"  data-price="222"  data-num="2">商品2  data-price="222"  data-num="2"</li>
+        <li><input type="checkbox"  data-price="333"  data-num="3">商品3  data-price="333"  data-num="3"</li>
+        <li><input type="checkbox"  data-price="444"  data-num="4">商品4  data-price="444"  data-num="4"</li>
+    </ul>
+
+    <p>总价是：0元</p>
+
+    <script>
+        $(function(){
+           $("ul  li  input").on("change",function(){
+               var  total=0;
+            var  chk=$("ul  li  input:checked");
+            //console.log(chk);
+            $.each(chk,function(index,item){
+               // console.log(item);
+                var  price=$(item).data("price")
+                var  num=$(item).data("num")
+                
+                var sum=price*num;
+                console.log(sum);
+                total+=sum
+                
+            })
+            $("p").html("总价是："+total+"元");
+               
+           })
+        })
+        
+    </script>
+</body>
+</html>

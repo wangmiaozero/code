@@ -1,0 +1,29 @@
+表格
+				表格标签 table
+				表格的行: tr
+				表格的单元格: td
+
+				表格的其他标签:
+					th  表头标签
+					caption 表格标题
+
+					结构标签:在页面上没有任何效果,只是增加代码的阅读性
+						thead 表格头部
+						tbody  表格内容区域
+
+				表格的属性:
+					width
+					height
+					border
+					align 对齐
+					cellspacing  单元格与单元格间距
+					cellpadding  单元格与内容之间距离  
+						cell 把两个属性都写上,值都是0.
+
+				跨行跨列:
+					rowspan 跨行					
+					colspan 跨列
+						1.需要判断是跨行还是跨列  rowspan
+						2.在哪个标签上写
+						3.删除哪个
+

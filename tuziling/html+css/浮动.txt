@@ -1,0 +1,2 @@
+float: left; 恣検強 
+float:right; 嘔検強

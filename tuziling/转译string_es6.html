@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <ul>
+        <script>
+            // 拼接字符串
+
+            /*方法1：使用+=*/  
+            var html = "";  
+
+            html += "<li>";
+            html += '<a href="#">';
+            html += '<img src="./images/nav_1.png" alt="">';
+            html += '<p>全球购物</p>';
+            html += '</a>';
+            html += '</li>';
+
+            document.write(html);
+
+            /*  方法2： 字符串拼接 */
+            var html = "";  
+            html+= "<li>"+  
+                        "<a href='#'>"+
+                            "<img src='./images/nav_2.png' alt=''>"+
+                            "<p>进口商品</p>"+
+                        "</a>"+
+                    "</li>";
+            document.write(html);
+
+
+            /* 方法3： 转义符*/
+            var html = "";
+            html+="<li>\
+                    <a href='#'>\
+                        <img src='./images/nav_3.png' alt=''>\
+                        <p>无忧充值</p>\
+                    </a>\
+                    </li>";
+             document.write(html);
+
+
+            /* 方法4   模板字符串方法es6  
+            模板字符串（template string）是增强版的字符串，用反引号（`）标识。
+            它可以当作普通字符串使用，也可以用来定义多行字符串，或者在字符串中嵌入变量。
+            */
+
+            //html= '<li><a href="#"><img src="./images/nav_4.png" alt=""><p>时尚新宠</p></a></li>'
+            html+=`<li>
+                        <a href="#">
+                            <img src="./images/nav_4.png" alt="">
+                            <p>时尚新宠</p>
+                        </a>
+                     </li>`;
+            document.write(html);
+
+        </script>
+    </ul>
+    
+</head>
+<body>
+    
+</body>
+</html>

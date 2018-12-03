@@ -1,0 +1,746 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+浏览器不会执行JS代码,是通过JS内置引擎(解释器)来执行代码. 
+BOM 浏览器对象模型
+DOM 文档对象模型
+
+javascript 由三部分组成:ECMAScript,DOM,BOM
+
+ JavaScript 应用场景
+1. 网页特效
+
+2. 服务端开发(Node.js)
+
+3. 命令行工具(Node.js)
+
+4. 桌面程序(Electron)
+
+5. App(Cordova) 
+
+6. 控制硬件-物联网(Ruff)
+
+7. 游戏开发(cocos2d-js)
+
+行内样式   <button onclick="alert('你好啊')">点击</button>
+内嵌样式   <script></script>
+外部样式   <script src="outdoor.js"></script>  
+
+警示框  alert('迪丽热巴');
+控制台 console.log('古丽扎娜');
+提示用户输入框 prompt('请输入您喜欢的明星:');
+typeof() 判断数据类型
+isNaN 检测是不是数字 是数值结果就是false  是字符就是true
+
+
+什么是变量？
+概念：变量是用于存放数据的容器.
+声明变量，并赋值
+语法：var 变量名 = 变量值;
+
+
+二进制 0 1 
+八进制 0~7
+十进制 12  77  99
+十六进制 0~9  a~f 0x12
+
+数据类型转换
+	typeof 检测字符或者数值    
+	
+	在chrome 里面 数值类型 是蓝色  字符型是 黑色
+	数值里面只有一个字符就会转成 字符串
+	
+	Number()转成数字类型
+	toString() 转换字符
+	parseInt() 整数
+	parseFloat 浮点数
+	Boolean()  转换成布尔类型  只有 真/假   true/false 
+	isNaN      不是数值(true)  是数值(false)  是不是人
+	
+	转换为Boolean值
+	代表 空、否定的值 会被转换为 false 有五种  “ ''、0、NaN、null、undefined  
+	其余任何值都会被转换为 true
+
+
+\n
+
+   	换行符（重要)newline
+
+
+\ \
+
+  	斜杠 
+\
+
+\'
+
+  	单引号 '
+
+
+\"
+
+   	双引号 "
+
+
+\t
+
+  	 Tab
+
+
+\b   	
+
+空格   blank
+
+
+\r
+
+   	回车符
+
+&&并且    ||或者
+
+1. ()  优先级最高 
+2. 一元运算符  ++   --   !
+3. 算数运算符  先*  /  %   后 +   -
+4. 关系运算符  >   >=   <   <=
+5. 相等运算符   ==   !=    ===    !==
+6. 逻辑运算符 先&&   后||
+7. 赋值运算符
+
+if (条件表达式) {
+    // [如果] 条件成立执行的代码
+} else {
+    // [否则] 执行的代码
+}
+
+if-else-if语句语法:
+                if (表达式1) {
+                    执行代码1
+                } else if (表达式2) {
+                    执行代码2
+                } else if (表达式3) {
+                    执行代码3
+                } else {
+                    执行代码4
+                }
+
+三运表达式达式1 ? 表达式2 : 表达式3
+
+
+switch( 变量 ){ 
+    case value1:
+        //表达式结果 等于 value1 时 要执行的代码
+        break;
+    case value2:
+        //表达式结果 等于 value2 时 要执行的代码
+        break;
+    default:
+        //表达式结果 不等于任何一个 value 时 要执行的代码
+}
+
+
+for(初始化; 条件表达式; 自增表达式 ){
+    //循环体
+}
+双重for循环
+for (外循环的初始; 外循环的条件; 外循环的增量) {
+    
+    for (内循环的初始; 内循环的条件; 内循环的增量) {  
+
+       需执行的代码;
+   }
+
+}
+
+while (条件表达式) {
+    // 循环体代码 
+}
+
+
+do{
+    // 循环体代码 - 条件表达式为 true 时重复执行循环体代码
+} while(条件表达式);
+
+continue 跳出本次循环
+break 退出整个循环
+
+
+arr.length 获得数组长度
+列如:
+   <script>
+        //索引下标    0      1        2       3        4       5       6
+        var arr=['星期一','星期二','星期三','星期四','星期五','星期六','星期七',];
+        console.log(arr[5]); //输出的是 星期六
+        console.log(arr[2]);// 输出的是 星期三
+        console.log(arr.length); //数组长度  7
+    </script>
+
+数组中i 代表数组 索引(下标) arr[i]代表数组的元素
+
+翻转数组:
+0,1,2,3,4 旧
+0,1,2,3,4 新    数组长度-i-1  length-i -1
+冒泡
+外层 数组长度-1  length-1  
+内层 数组长度-i -1     length-i -1
+判断进行交换
+
+
+函数 就是 封装了 一段 可被重复调用执行的 代码块。
+
+  基本函数写法:
+                 function sayHi(){}
+                 sayHi();
+             匿名函数:
+                 function(){}
+
+             函数表达式
+                 var fn=function(){}
+                 fn();
+
+             自调用函数: 
+                 (function(){})()
+            
+             retrun 后的代码不被执行
+            
+            function add(num1，num2){
+                //函数体
+                return num1 + num2; // 注意：return 后的代码不执行
+                alert('我不会被执行，因为前面有 return');
+            }
+
+	return 返回值
+
+	arguments 伪数组
+
+函数可以作为参数传递
+
+
+function fn() {
+    return function() {
+        console.log('函数可以作为返回值');
+    }
+}
+
+var ff = fn();
+// 相当于
+// var ff = function() {
+//     console.log('函数可以作为返回值');
+// };
+ff();
+
+
+局部变量
+
+- 在局部作用域下声明的变量叫做局部变量（在函数内部定义的变量）
+- 局部变量只能在该函数内部使用
+
+
+全局作用域
+
+供所有代码执行的环境(整个script标签内部)  或者一个独立的js文件中  
+
+
+- JavaScript解析器会在全局环境下查找 var、function关键字，变量只声明不赋值，函数声明不调用。
+
+- 预解析只发生在当前作用域下
+
+
+
+对象: 就是将现实事物抽象为功能代码.  将现实世界的东西,用对象的语法格式来表示.
+		对象的语法:  对象中有属性和方法
+		（名词）   属性  
+		（动词）    称为  方法
+	
+
+
+- 对象里面的属性调用 :   对象.属性名         这个小点 就理解为 的 
+
+- 对象里面的属性另外调用方式 :   对象['属性名']    注意  方括号里面的属性 必须加 引号   我们后面会用
+
+- 对象里面的方法调用： 对象.方法名()       注意这个方法名字后面一定加括号
+
+
+对象.属性名
+对象['属性名']
+对象.方法名()  
+
+
+		对象的三种写法: 
+1.字面量写法
+var star = {
+    name : '刘德华',
+    age : 18,
+    sex : '男',
+    sayHi : function(){
+        alert('大家好啊~');
+    }
+};
+console.log(star.name);
+或console.log(star['name']);
+star.sayHi();
+
+对象.属性名
+对象['属性名']
+对象.方法名()
+
+
+2. new Object()写法
+
+var zs = new Object();
+zs.name='张三';
+zs.age=18;
+zs.sayHi=function(){}
+
+对象名.属性名 = 值
+对象名.方法名 = function(){}
+
+
+构造函数可以创建多个对象
+把相同定的属性和方法进行抽象,然后进行函数封装
+1. 构造函数用于创建某一大类对象，首字母要大写。
+
+2. 构造函数要和new一起使用才有意义。
+
+
+function 构造函数名(参数1..){
+构造函数名首字母大写
+this.属性名=属性值;
+this.方法名=funtion(){}
+}
+
+调用构造函数 new 构造函数名();
+
+
+
+3.构造函数写法
+  function Programmer (name,age,sex){
+             this.name = name;
+             this.age =age;
+             this.sex = sex;
+             this.sing =function(){
+                 alert('敲代码');
+             }
+         }
+         var wangmiao = new Programmer('汪苗',18,'男');
+         console.log(wangmiao.name);
+         wangmiao.sing();
+
+
+
+new会在内存中创建一个新的空对象
+new 会让this指向这个新的对象
+执行构造函数里面的代码  目的：给这个新对象加属性和方法
+new会返回这个新对象 （所以构造函数里面不需要return）
+
+1. 函数在定义的时候this是不确定的，只有在调用的时候才可以确定
+2. 一般函数直接执行，内部this指向全局window
+3. 函数作为一个对象的方法，被该对象所调用，那么this指向的是该对象（谁调用指向谁）
+4. 构造函数中的this  对象的实例 
+
+
+for (变量 in 对象名字) {
+    变量输出的是属性名
+    对象[变量]输出的是 属性值
+}
+
+ 这个变量是自定义 符合命名规范  但是一般我们 都写为 k  或则  key
+
+后面的是对象 可以  数组     因为 数组也属于对象
+
+
+
+对象的遍历: for-in
+
+  
+         function Yingxiong(name,type,blood){
+             this.name = name;
+             this.type = type;
+             this.blood = blood;
+             this.singgj=function(){
+                 alert('攻击');
+             }
+         }
+         var houyi = new Yingxiong('后裔','射手型','2333血量');
+        /*  console.log(houyi.name);
+         houyi.singgj();
+         console.log(houyi); */
+         for (var key in houyi){
+             console.log('属性名:'+key+'\t '+'值是:'+houyi[key]);
+             
+         }
+
+
+1. JSON 数据的书写格式是：名称/值对。
+
+2. 里面的属性和值都要用 双引号 括起来
+
+
+ var json = {
+     "id": "1",
+     "name": "andy",
+      "age": "18",
+      "tel": "110120"
+ }
+ for (var k in json) {
+    console.log(k); // 这里的k 是属性名
+    console.log(obj[k]); // 这里的 obj[k] 是属性值
+}
+
+Math.PI			// 圆周率
+Math.floor() 	        // 向下取整
+Math.ceil()             // 向上取整
+Math.round()		// 四舍五入版 就近取整   注意 -3.5   结果是  -3 
+Math.abs()		// 绝对值
+Math.max()/Math.min()	// 求最大和最小值
+Math.sin()/Math.cos()	// 正弦/余弦
+Math.power()/Math.sqrt()// 求指数次幂/求平方根
+
+Math.random 生成随机数
+
+function getRandom(min, max) {
+   return Math.floor(Math.random() * (max - min + 1) + min);
+}
+console.log(getRandom(10, 20))
+
+
+随机背景颜色
+
+function getRandom(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+function getRandomColor() {
+    var c1 = getRandom(0, 255);
+    var c2 = getRandom(0, 255);
+    var c3 = getRandom(0, 255);
+    return 'rgb(' + c1 + ', ' + c2 + ', ' + c3 + ')';
+}
+
+window.onload=function(){
+    document.body.style.backgroundColor=getRandomColor();
+}
+
+
+Date 对象基于1970年1月1日（世界标准时间）起的毫秒数。
+// 获取当前时间，
+var now = new Date();
+console.log(now);
+
++new 获得当前毫秒数 列如:
+	
+var now = +new Date();
+console.log(now);
+
+新方法获得当前毫秒数 console.log(Date.now());
+
+
+Date构造函数的参数
+// 括号里面时间 ，就返回 参数里面的时间
+日期格式字符串  '2015-5-1'	 new Date('2015-5-1')  或者  new Date('2015/5/1') 
+
+getFullYear()  
+
+获取当年               
+
+         dObj.getFullYear()
+
+
+getMonth()
+
++1      获取当月（0-11）输入数值类型要少一个月
+
+      	       dObj.getMonth()
+
+
+getDate()      
+
+获取当天日期                    
+
+dObj.getDate()
+
+
+getDay()
+
+       获取星期几 （周日0 到周六6）
+
+    dObj.getDay()
+
+
+getHours()
+
+     获取当前小时
+
+                    dObj.getHours()
+
+
+getMinutes()   
+
+获取当前分钟                     
+
+dObj.getMinutes()
+
+
+getSeconds()
+
+   获取当前秒钟                    
+
+dObj.getSeconds()
+
+
+现在时间
+function getMyDate() {
+    var arr = ['星期天', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
+    var date = new Date();
+    // 2018年5月29日 星期二 
+    var str = date.getFullYear() + '年' + (date.getMonth() + 1) + '月' + date.getDate() + '日 ' + arr[date.getDay()];
+    return str;
+}
+console.log(getMyDate());
+
+当前时间案列
+
+function getTimer() {
+    var date = new Date();
+    // var str = date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds();
+    var h = date.getHours();
+    var m = date.getMinutes();
+    var s = date.getSeconds();
+    // if(h < 0) {
+    //     h = '0' + h;
+    // }
+    h = h < 10 ? '0' + h : h
+    m = m < 10 ? '0' + m : m
+    s = s < 10 ? '0' + s : s
+    return h + ':' + m + ':' + s;
+}
+console.log(getTimer());
+
+- 计算公式：
+
+  
+  	 d = parseInt(countTime/ 60/60 /24); // 计算天数
+                d = d < 10 ? '0'+ d : d
+         h = parseInt(countTime/ 60/60 %24); // 计算小时
+                h = h < 10 ? '0'+ h : h
+         m = parseInt(countTime /60 %60 ); // 计算分数
+                m = m < 10 ? '0'+ m : m
+         s = parseInt(countTime%60);  // 计算当前秒数 
+                s = s < 10 ? '0'+ s : s
+            return '还剩下'+ d + '天' + h + '时' + m + '分' + s +'秒';
+
+d = parseInt(总秒数/ 60/60 /24); // 计算天数
+
+ 
+h = parseInt(总秒数/ 60/60 %24) // 计算小时
+
+  
+m = parseInt(总秒数 /60 %60 ); // 计算分数
+
+    
+s = parseInt(总秒数%60);  // 计算当前秒数
+
+
+
+倒计时天数:
+
+
+function getCountTime(endTime){
+    var d, h, m , s;
+    var countTime = parseInt((new Date(endTime)- new Date())/1000);
+        d = parseInt(countTime/ 60/60 /24); // 计算天数
+                d = d < 10 ? '0'+ d : d
+        h = parseInt(countTime/ 60/60 %24); // 计算小时
+                h = h < 10 ? '0'+ h : h
+        m = parseInt(countTime /60 %60 ); // 计算分数
+                m = m < 10 ? '0'+ m : m
+        s = parseInt(countTime%60);  // 计算当前秒数 
+                s = s < 10 ? '0'+ s : s
+            return '还剩下'+ d + '天' + h + '时' + m + '分' + s +'秒';-
+}
+console.log(getCountTime('2018-10-8 12:00'));
+
+创建数组对象的两种方式
+
+- 
+字面量方式
+- new Array()
+
+
+
+instanceof     检测是否为数组
+var arr = [1, 23];
+var obj = {};
+console.log(arr instanceof Array); // true
+console.log(obj instanceof Array); // false
+console.log(Array.isArray(arr)); // true
+console.log(Array.isArray(obj)); // false
+
+筛选
+var arr = [1500, 1200, 2000, 2100, 1800];
+var newArr = [];
+for (var i = 0; i < arr.length; i++) {
+    if (arr[i] < 2000) {
+        newArr.push(arr[i]);
+    }
+}
+console.log(newArr);
+
+升序公式sort冒泡)
+var arr = [1, 64, 9, 6];
+arr.sort(function(a, b) {
+    return b - a; // 降a序
+    // return a - b;   升序
+});
+console.log(arr);
+
+连接数组concat
+
+var arr1 = [1, 2];
+var arr2 = ['pink', 'red'];
+var arr3 = ['andy', 18]; 
+//返回连接之后的新数组
+console.log(arr1.concat(arr2, arr3)); 
+
+        1.indexOf(要查找的字符,开始位置)  开始位置不写默认从0开始，找不到返回-1  ----查找字符
+
+        2.charAt(字符位置)      给一个位置，返回该位置的字符                   ----获取字符
+
+        3.subStr(开始位置，截取个数)  返回截取的字符串结果                     ----截取字符
+
+        4.replace(要替换的字符,替换的新字符)                                  ----替换字符
+
+        5.join(连接符)  将数组通过连接符连接，返回字符串                       ----连接字符
+
+        6.split(连接符) 将字符根据连接符分割成多个值的数组,返回数组             ----分割字符
+
+        7.toUpperCase()  将字符串转换为大写                                  ----转换成大写
+
+        8.toLowerCase()  将字符串转换为小写                                  ----转换成小写
+
+把数字 转换字符串
+toString()
+
+把数组转换成字符串，逗号分隔每一项
+
+返回一个字符串
+
+join('分隔符')
+
+方法用于把数组中的所有元素转换为一个字符串。
+
+返回一个字符串
+
+
+var arr = ['red', 'green', 'blue', 'pink'];
+console.log(arr.join()); // 跟toString() 一样， 转换为字符串
+console.log(arr.join('-')); //red-green-blue-pink
+
+
+splice()        
+
+数组删除splice(第几个开始,要删除个数)
+
+返回被删除项目的新数组  注意，这个会影响原数组
+
+slice()         
+
+数组截取slice(begin, end)
+
+          返回被截取项目的新数组
+
+concat()  合并         
+
+连接两个或多个数组  不影响原数组
+
+返回一个新的数组
+
+reverse()翻转数组        
+
+颠倒数组中元素的顺序,无参数
+
+        该方法会改变原来的数组    返回新数组
+
+
+sort()
+
+    升序(降序)冒泡       对数组的元素进行排序           
+
+       该方法会改变原来的数组  返回新数组
+
+
+push(参数1）              末尾添加一个或多个元素 ，注意修改原数组  并返回新的长度
+pop()                     删除数组最后一个元素，把数组长度减 1  无参数、注意修改原数组  返回它删除的元素的值
+unshift(参数1...)         向数组的开头添加一个或更多元素，注意修改原数组，  并返回新的长度
+shift()                把数组的第一个元素从其中删除，把数组长度减 1 无参数、注意修改原数组，返回第一个元素的值
+
+splice（）            删除某个元素 可以替换或者插入元素   插入splice（0,0,'值'） splice（2,0,'值'）第2中间插入 
+splice（2,1,'值'） 替换元素
+
+清空数组
+var arr = [1,2,3,4,5];
+arr = [];
+
+indexOf                   查询元素位置   从左到右查询
+lastIndexOf               查询元素位置 从右到左查询
+indexOf()
+
+            数组中查找给定元素的第一个索引
+
+如果存在返回索引号  如果不存在，则返回-1。
+
+
+查找全部
+var arr = ['red', 'green', 'blue', 'pink','blue'];
+var index = arr.indexOf('blue');
+while (index !== -1){
+    console.log(index);
+    index = arr.indexOf('blue',index + 1);
+    
+}
+
+编写一个方法去掉一个数组的重复元素
+var arr=['c', 'a', 'z', 'a', 'x', 'a', 'x', 'c', 'b'];
+var newArr=[];
+for(var i = 0; i< arr.length;i++){
+    if(newArr.indexOf(arr[i])=== -1){
+        newArr.push(arr[i]);
+    }
+}
+console.log(newArr);
+
+
+值类型当参数,传递的是复制一份,相互之间不影响
+ 引用类型参数,传递的是同一份地址,一个人修改, 大家都修改.
+
+后台传数据
+
+function params (url){
+            var arr = url.split('?');
+           // console.log(arr);
+            var params = arr[1];
+            //console.log(params);
+            var arr1 = params.split('&');
+            //console.log(arr1);  
+            var o = {};
+            for(var i = 0; i< arr1.length;i++){
+                //console.log(arr1[i]); 
+                var newArr = arr1[i].split('=');
+               // console.log(newArr);
+                
+                o[newArr[0]]=newArr[1];
+            }
+            return o ;
+            
+        }
+        //params('http://www.itheima.com/login?name=zs&age=18');
+        console.log(params('http://www.itheima.com/login?name=zs&age=18'));
+
+</body>
+</html>

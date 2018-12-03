@@ -1,0 +1,11 @@
+$(function(){
+  $('#jingpin>a').mouseover(function(){
+    var index=$(this).index();
+    $('#mask>ul').eq(index).siblings('ul').hide();
+    $('#mask>ul').eq(index).show();
+    console.dir($('#jingpin>span')); 
+    var spanWidth=$('#jingpin>a').width()
+  //  var spanWidth=$('#jingpin>span').width()
+  $('#jingpin>span').css('left',spanWidth*index)
+  });
+});

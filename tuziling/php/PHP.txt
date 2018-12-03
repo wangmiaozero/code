@@ -1,0 +1,503 @@
+1、location.href='http://www.xxx.com/';
+
+2、location.replace('http://www.xxx.com/');
+
+phpstudy运用在后端
+
+------服务器:提供服务的机器------
+
+通过域名访问  给电脑配服务器
+
+静态页面就是数据不变
+数据变化:动态网页  
+
+
+服务器作了什么:
+1.接受用户请求
+2.根据用户请求执行相应业务处理
+3.将处理返回
+
+ajax:
+发送请求
+响应结果
+
+http:服务端的通讯协议
+https: 更安全
+
+bs   浏览器服务器
+
+
+cs   客户端服务器
+
+
+端口 3306 数据库  
+80    wed服务
+
+
+
+
+
+DNS:
+1.接收用户输入的域名
+2.查询域名所对应的ip地址
+3.返回ip
+
+DNS 翻译
+
+hosts文件 相当于DNS
+
+C:\Windows\System32\drivers\etc
+
+PHP是什么?
+超文本预处理
+
+端口:
+
+计算机本身是一个封闭的环境，就像是一个大楼，如果需要有数据通信往来，必须有门，这个门在术语中就叫端口，每一个端口都有一个编号，每台计算机只有 65536 个端口（0-65535）
+
+
+<?php
+// echo 是 PHP 中的一个特殊的“指令”，
+// 不一定需要像函数那样通过 `()` 去使用
+// 注意：echo 后面紧跟着一个空格
+echo 'hello php';
+echo 'hello', 'world';
+// => `helloworld`
+
+
+
+<?php
+// print 与 echo 唯一区别就是只能有一个参数
+print 'hello php';
+// print 'hello', 'world';
+// => Parse error: syntax error ...
+
+
+<?php
+// var_dump 是一个函数，必须跟上 () 调用
+// 可以将数据以及数据的类型打印为特定格式
+var_dump('hello php');
+// => 'string(9) "hello php"
+
+
+数据类型:
+- string（字符串） **
+
+- integer（整型）—— 只能存整数
+
+- float（浮点型）—— 可以存带小数位的数字
+
+- boolean（布尔型）
+
+- array（数组） **
+
+- object（对象）
+
+- NULL（空）
+
+
+判断数据类型:
+- is_string():判断当前变量是否是字符串类型
+
+- is_bool():判断当前变量是否是布尔类型
+
+- is_int():判断当前变量是否是整形类型
+
+- is_float():判断当前变量是否是浮点类型
+
+- is_array():判断当前变量是否是数组类型
+
+- is_object():判断当前变量是否是对象类型
+
+
+
+pre 格式化   后里面写空格就有空格
+
+$globals   改变全局变量作用域
+
+- $GLOBALS — 引用全局作用域中可用的全部变量
+
+- $_SERVER — 获取服务端相关信息
+
+- $_REQUEST — 获取提交参数
+
+- $_POST — 获取 POST 提交参数
+
+- $_GET — 获取 GET 提交参数
+
+- $_FILES — 获取上传文件
+
+- $_ENV — 操作环境变量
+
+- $_COOKIE — 操作 Cookie
+
+- $_SESSION — 操作 Session
+
+
+
+;开启扩展路径ext，ext是PHP程序的插件目录，修改成绝对路径
+extension_dir = "G:/phpstudy/php/php-7.1.14/ext"
+
+
+ // +只能是算术运算符，系统会自动的将+两边的变量转换为数组，
+    //如果可以转换，就进行转换，否则返回这个数据类型的默认值  
+    //int >0 object > null bool>false float:0.0
+    // 在php中字符串连接符使用.
+
+    // 算术运算符： + - * 、 % ++ --
+    // 赋值运算符：= += -= *= /=
+    // 逻辑运算符：！ && ||
+    // 比较运算符：> >= < <= == === !=
+    // 三元运算符：a>b ? "" : ""
+
+
+get:一般用来获取数据,参数会在url地址栏拼接
+post:一般用来发送数据到服务器
+
+----------accept=".jpg,.png"文件类型-----------------------
+
+<form action="<?php echo $_SERVER["PHP_SELF"] ?>" method="post" enctype="multipart/form-data">
+       文件上传: <input type="file" name="myfile" id="" accept=".jpg,.png">
+                <input type="submit">
+    </form>
+----------------------------------------------------------
+
+trim()去除前后的空格
+--------------------------上传--------------------------------------
+  <!-- 1.在php中，上传文件的请求方式必须是post -->
+    <!-- 2.在上传的时候必须在表单设置enctype属性
+        application/x-www-form-urlencoded：将参数编码为键值对的格式，这是标准的编码格式(UTF-8 GBK GB2312),它用来处理字符串，它是默认的编码格式
+        multipart/form-data:它是专门用来处理特殊数据的，如文件
+    -->
+
+---------------------------------------------------------------------
+Array
+        (
+            [myfile] => Array
+                (
+                    [name] => 跨域攻击.png:源文件的名称
+                    [type] => image/png：源文件的类型
+                    [tmp_name] => C:\Windows\phpE412.tmp：这是文件在服务器的临时路径
+                    [error] => 0：错误信息，0代表没有错误
+                    [size] => 256436：文件的大小
+                )
+        )
+ */
+//（1）strpos(源字符串，搜索字符串):可以获取指定字符串在源字符串中第一次出现的索引值，索引从0开始
+//（2）strrchr(源字符串，指定搜索的字符)
+
+-
+    <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post" enctype="multipart/form-data">
+        文件选择：<input type="file" name="myfile"><br>
+        <input type="submit">
+    </form>
+
+GET方式提交数据的特点：
+get方式在url后面拼接参数，只能以文本的形式传递数据
+传递的数据量小，4KB左右（不同浏览器会有差异）
+安全性低，会将数据显示在地址栏
+速度快，通常用于对安全性要求不高的请求
+
+特点
+1-post 方式 安全性比较高
+2-传递数据量大，请求对数据长度没有要求
+3-请求不会被缓存，也不会保留在浏览器历史记录中
+用于：密码等安全性要求比较高的场合，提交的数据量比较大：发布文章，上传文件。
+POST方式提交数据上限默认为8M（可以在PHP的配置文件post_max_size选项中修改）
+
+<!-- $_SERVER["PHP_SELF"] 表示当前处理页面的名字-->
+
+
+implode:字符串分割
+
+//使用move_uploaded_file函数来实现文件的移动，否则文件在程序结束后会被自动的删除
+//move_uploaded_file(源文件的全路径，目标文件的全路径)
+
+出现乱码解决代码:header('content-type:text/html;charset=utf8');
+
+<?php
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+  // 表单提交请求
+}
+
+超全局变量:无法访问函数中的变量;  $GLOBALS
+
+时间区
+php-ini >date.timezone = PRC|Asia/shanghai|Asia/chongqin 
+-------------------------------------------------------------------
+
+1.php标记
+    <?php   
+        1.写在这个结构内的代码才会以php语法解析
+        2.写在这个结构外的代码会原样返回
+    ?>
+
+
+2.输出内容的方式
+    echo:输出一个或者多个字符串
+    print 或者 print():输出一个字符串值
+    print_r():可以输出复杂数据类型，如数组，以键值对的形式输出
+    var_dump():可以输出复杂数据类型，如数组，以键值对的形式输出，还可以输出数据的长度
+
+
+
+3.字符串
+    '':不能解析变量，会将变量当成普通字符串处理  \\ \'
+    "":能解析变量 \" \t \n \r \$
+
+
+
+4.数组：
+    创建方式：
+        $arr = array()
+        $arr = []
+        $arr[] = value; //如果数组不存在则可以自动的创建一个数组，并将当前值添加到数组中，如果存在则添加数据到数组
+    数组的类型：
+        索引数组：不人为设置key $arr = array(1,2,3,4);
+        关联数组：人为设置key和value  $arr = array("name"=>"jack")
+        混合数组：$arr= array(1,2,3,"name"=>"jack",4)
+        二维数组：数据的值本身又是一个数组
+            $arr = array(
+                array(
+                    "name"=>"jack",
+                    "age"=>20
+                ),
+                array()
+            );
+    数组遍历：for  | foreach
+    for($i =0;$i<count(数组);$i++){
+
+    }
+
+    foreach(需要遍历的数组对象 as $key => $value){
+
+    }
+
+    foreach(需要遍历的数组对象 as $value){
+
+    }
+
+
+5.变量作用域：函数内部默认不能使用函数外部所声明的成员，如果想使用，则：
+    1.使用global关键字
+    2.使用超全局变量$GLOBALS
+
+6.常量的定义和使用：
+    define(名称，值，false)
+全大写
+
+7.载入其它文件：文件包含
+    include:如果载入失败，不会报错，后续代码会继续执行，它可以重复载入
+    include_once:如果载入失败，不会报错，后续代码会继续执行，它不会重复载入，只会真正的载入一次
+    require:如果载入失败，会报错，后续代码不会继续执行，它可以重复载入
+    require_once:如果载入失败，会报错，后续代码不会继续执行，它不可以重复载入
+
+8.常用API
+    文件操作：
+        file_get_contents:可以读取文件内容并返回
+        file_put_contents(文件路径，写入的内容，FILE_APPEND):可以将指定的字符串内容写入到文件，其中第三个参数FILE_APPEND可以实现文件内容的追加
+
+9.html混编
+    1.在<?php 在这个结构内部只能写符合php语法的代码 ?>
+    2.在<?php  ?>结构的代码会原样输出
+    3.混编实现方式
+        1.<?php echo '<p></p>' ?>
+        2.
+            <?php  if(){ ?>
+                <p></p>
+            <php }?>
+
+
+----------------------------------------------------------
+php.ini
+上传音乐  upload_max_filesize = 500M  更改
+
+<audio>标签，作用：播放音乐
+								src：添加音频文件路径
+								controls  出现控制播放的控制面板，
+								autoplay  自动播放 
+
+
+请求行
+请求头
+空行
+请求体
+
+记住：使用session一定要加上session_start()
+
+//一小时过期
+setcookie("uName","admin",time()+ 3600)
+//永久性COOKIE
+setcookie("password","123",PHP_INT_MAX);
+
+//setcookie("username","jack",PHP_INT_MAX,"/day5/down");
+
+-----------增加删除和修改是返回受影响的行数--------------
+
+查询语句的语法:select *|字段列表 from 表列表  where  条件
+*代表当前表的所有字段
+
+
+数据库操作:
+select from	表名	where	条件	----查询
+insert	into	表名	values	条件	----新增
+update		表名	set	条件	----修改
+delete from	表名	where	条件	----删除
+
+-- 查询mytalbe中的所有数据
+SELECT * FROM mydase
+
+-- 查询mytalbe中的所有数据
+SELECT * FROM mydase
+-- 查询ID  not>!  and>&&  or>||
+SELECT id,NAME FROM mydase
+SELECT * FROM mydase where id =4
+SELECT * FROM mydase where age<20
+SELECT * from mydase where age>=20 AND gender =1
+-- 增加
+insert into  mydase values (null,'lili',13,2010-12-1,0,17615848307)
+INSERT INTO mydase(age,gender) VALUE (40,1)
+-- 修改语句
+UPDATE mydase SET age = age +10 WHERE id = 2
+update mydase set age = age +20 where id = 5
+-- 删除语句
+delete from mydase where id = 6
+delete from mydase where id in (4,5)
+
+
+
+select	count	---数数总计
+select	min	---最小值
+select	max	---最大值
+select	avg	---平均值
+
+判断用户是否提交
+  if($_SERVER["REQUEST_METHOD"]==="POST"){
+    login();
+  }
+步骤分析：
+1、判断请求是否是POST  $_SERVER[‘REQUEST_METHOD’]==’POST’
+2、校验表单数据是否为空或者不存，如果不存在就将该表单的name存入数组中
+3、点击提交判断没有输入值就显示警告
+
+
+步骤分析：  list.php
+1、读取文件获取json字符串
+2、将json字符串转换成php数组
+3、遍历数组将数据渲染到页面上
+
+
+步骤分析：
+1、将选中的文件存储为永久文件
+2、读取music.json中的数据
+(1)将数据转换成数据数组  json.decode
+(2)获取表单输入的值存放至数据数组中
+3、将数据数组转换成字符串  json.encode 写入music.json中
+4、添加成功后页面跳转至list.php
+
+
+链接库:
+header('content-type:text/html;charset=utf-8');
+
+mysqli_set_charset($conn,"utf8");
+
+    // 连接成功，那么就可以创建sql语句，执行相关操作
+    // 1.新增数据:在执行新增语句的时候，mysqli_query的返回值：如果成功则返回true,否则返回false
+    // 2.修改操作：
+    // 3.删除操作
+
+
+1.创建连接--建立连接
+    $conn = mysqli_connect(主机或IP地址，用户名，密码，数据库名称);
+    如果连接成功，就返回一个连接对象(资源)，如果连接失败，返回false
+
+2.设置编码：主要是解决浏览器出现乱码的问题
+    1.服务器端的编码和php的编码不一致：mysqli_set_charset($conn,"utf8") | mysqli_query($conn,"set names utf-8")
+    2.php的编码和浏览器端的编码不一致：header("Content-Type:text/html;charset=utf-8")
+
+3.创建sql语句
+    1.新增：数值如果是字符串类型，一定要使用引号包含.如果数据没有使用引号包含，有可能会有错
+        "insert into temp value('张三')"
+    2.删除和修改一定需要考虑是否有条件
+
+4.执行sql语句
+    1.增加删除和修改：如果成功则返回true,否则返回false
+    2.查询：
+        查询失败：false
+        查询成功但是没有数据行:mysqli_num_rows(资源对象--引用)
+        查询成功也有数据行：读取数据
+    3.使用mysqli_query($conn,$sql)
+
+5.接收返回值
+    增加删除和修改：true/false 
+    查询有结果集同时有数据
+        mysqli_fetch_array(查询结果集)：每次读取一行数据，生成数组，里面包含两种形式的数据(索引数组，关联数组)
+        mysqli_fetch_assoc:每次读取一行数据，生成数组,里面只包含关联数组
+        mysqli_fetch_row:每次读取一行数据，生成数组，里面只包含索引数组
+    循环读取：
+        while($row = mysqli_fetch_assoc(结果集)){
+            $arr[] = $row;
+        }
+6. 释放资源：及时的关闭连接对象，释放资源:什么时候释放：当与mysql相关的操作执行完毕之后就立刻释放
+    mysqli_close($conn);
+
+
+<?php 
+    header("Content-Type:text/html;charset=utf-8");
+   $coon = mysqli_connect("localhost","root","root","mydase");
+   mysqli_set_charset($coon,"utf8");
+   if(!$coon){
+       //echo '连接失败';
+       die("连接失败");
+   }else{
+       echo "连接成功";
+   }
+?>
+
+获取计算机相隔现在时间
+$time1=strtotime();
+现在时间
+$time2 = time();
+ //合并单元格
+              //colspan  横向合并 跨列
+              //rowspan  纵向合并 跨行
+
+
+200 OK
+请求已成功，请求所希望的响应头或数据体将随此响应返回。出现此状态码是表示正常状态。
+403 
+请求被拒绝
+404  服务器没有这个页面
+
+
+extension_dir  开启 配置文件
+mysqli         开启 配置文件
+	
+
+==========================================================
+//连接库
+$conn=mysqli_connect(DB_HOST,DB_USER,DB_PWD,DB_NAME);
+
+//设置sql语句
+ $sql="SELECT p.id,p.title,p.feature,p.created,p.content,p.views,p.likes,c.`name`,u.`nickname`,
+    (SELECT COUNT(id) FROM comments WHERE comments.post_id=p.`id`) AS  commentCount
+    FROM posts p
+    LEFT JOIN  categories c ON  c.`id`=p.`category_id`
+    LEFT JOIN  users u ON  u.`id`=p.`user_id`
+    WHERE p.`category_id`={$categoryId}
+    LIMIT 20";
+
+//执行sql语句
+    $result=mysqli_query($conn,$sql);//结果集
+  header("Content-Type:text/html;charset=utf-8");
+
+//拿到数据
+  $postarr=[];
+  while($row=mysqli_fetch_assoc($result)){
+    $postarr[]=$row;
+  }
+
+
+
+ header("Content-Type:application/json;charset=utf-8");
+     echo  json_encode($response);从数据库获取内容并转换成JSON格式的内容

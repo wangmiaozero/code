@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery-1.12.2.js"></script>
+   <style>
+       *{
+           margin: 0;
+           padding: 0;
+           list-style: none;
+       }
+       .box{
+           width: 520px;
+           height: 280px;
+           border: 1px solid red;
+           margin: 100px auto 0;
+           position: relative;
+           /* overflow: hidden; */
+       }
+       .box ul{
+           width: 3120px;
+           /* width: 2600px; */
+           position: absolute;
+           left: 0;
+           top: 0;
+       }
+       .box ul li {
+           float: left;
+           width: 520px;
+           height: 280px;
+       }
+       .box ol{
+           position: absolute;
+           left: 50%;
+           bottom: 10px;
+           margin-left: -100px;
+       }
+       .box ol li{
+           width: 20px;
+           height: 20px;
+           border-radius: 50%;
+           background-color: yellow;
+           float: left;
+           margin: 5px 10px;
+           cursor: pointer;
+       }
+       .box .current{
+           background-color: #fff;
+       }
+       .box span{
+           width: 40px;
+           height: 60px;
+           background-color: rgba(0, 255, 0, 0.6);
+           position: absolute;
+           top: 50%;
+           margin-top: -30px;
+           cursor: pointer;
+       }
+       .box .arrow-l{
+           left: 0;
+       }
+       .box .arrow-r{
+           right: 0;
+       }
+   </style>
+</head>
+<body>
+    <div class="box">
+        <ul id="imgBox">
+            <li><img src="images/banner1.jpg" alt=""></li>
+            <li><img src="images/banner2.jpg" alt=""></li>
+            <li><img src="images/banner3.jpg" alt=""></li>
+            <li><img src="images/banner4.jpg" alt=""></li>
+            <li><img src="images/banner5.jpg" alt=""></li>
+        </ul>
+        <ol id="dianBox">
+            <li class="current"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ol>
+        <span class="arrow-l" id="arrowLeft"></span>
+        <span class="arrow-r" id="arrowRight"></span>
+    </div>
+
+        <script src="animate.js"></script>
+        <script>
+           $(function(){
+              var imgCount = 0;
+              var firstLi=$('#imgBox>li').eq(0).clone(true);//克隆
+              $('#imgBox').append(firstLi);//克隆添加元素
+              //获取宽度 
+              var divWidth =$('.box').width();
+              //右箭头
+              $('#arrowRight').click(function(){
+                  imgCount++;
+                  if(imgCount>5){
+                      $('#imgBox').css('left',0);//瞬间移动
+                      imgCount=1;  
+                  } 
+                    changedian(imgCount);
+                    changeimg(imgCount);
+
+              });
+             // 左箭头
+              $('#arrowLeft').click(function(){
+                  imgCount--;
+                  if(imgCount<0){
+                      imgCount=4;
+                  }
+                  changedian(imgCount);
+                  changeimg(imgCount);
+                  
+              })
+              //焦点切换
+              $('#dianBox>li').click(function(){
+                 index=$(this).index();
+                  changeimg(index);
+                  changedian(index);
+                  imgCount=index;
+                  
+                  
+              })
+
+            //   ---------------封装----------------------
+            //图片移动
+                var changeimg=function(num){
+                    var move=-num*divWidth;
+                     $('#imgBox').stop().animate({'left':move},500); 
+                }
+                //排他
+                var changedian=function(index){
+                    if(index==5){
+                        index=0;
+                    } 
+                    $('#dianBox>li').eq(index).addClass('current').siblings().removeClass('current');
+                    
+                }
+
+            //------------定时器-----------------
+                 var timer = setInterval(function(){
+                   $('#arrowRight').click();  
+                 },1500);
+            //-------------清除/添加定时器--------------
+                 $('.box').hover(function(){
+                     clearInterval(timer);
+                 },function(){
+                    timer = setInterval(function(){
+                        $('#arrowRight').click();  
+                    },1500);
+                 });
+
+           });
+           
+
+        </script>
+
+</body>
+</html>

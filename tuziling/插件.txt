@@ -1,0 +1,39 @@
+1  HTML代码提示插件
+
+HTML Snippets,
+
+2  HTML CSS 插件
+
+HTML CSS Support  这个支持H5C3
+
+3  浏览器插件
+
+Open in browser  这个打开浏览器的快捷键是alt+b
+
+或者自己在插件搜索browser
+
+4  HTML标签首尾自动补全插件
+
+Auto Rename Tag
+
+5 代码格式化插件
+
+Beautify
+
+6  JQuery 代码提示插件
+
+JQuery Code Snippets
+
+7  图标插件
+
+Material Icon Theme
+
+或者自己搜索 Icon  这个插件的是以图标显示文件的类型
+
+8 自动寻找文件路径插件
+
+Path Intellisense
+
+9  颜色主题插件自己点文件 --> 首选项 --> 颜色主题 -- > 拉到最下面点击进入商店自己挑自己喜欢的
+
+10  Preview on  Web server   相当好用,谁用谁知道
