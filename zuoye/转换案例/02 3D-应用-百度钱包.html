@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>百度钱包</title>
+	<style>
+		body{
+			padding: 0;
+			margin: 0;
+			background-color: #77f7f7;
+		}
+		.wallet {
+			width: 300px;
+			height: 300px;
+			margin: 100px auto;
+			position: relative;
+			transform-style: preserve-3d;
+			perspective: 1000px;
+			transition: all 1s;
+		}
+		.wallet::before,.wallet::after{
+			content: "";
+			display: block;
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			left: 0;
+			top:0;
+			background: url(images/bg.png) no-repeat;
+		}
+		.wallet::before{
+			background-position: right top; 
+			transform: rotateY(180deg); 
+		}
+		.wallet::after{
+			background-position: left top; 
+		}
+		.wallet:hover{
+			transform: rotateY(180deg); 
+		}
+	</style>
+</head>
+<body>
+	<div class="wallet">
+		
+	</div>
+</body>
+</html>

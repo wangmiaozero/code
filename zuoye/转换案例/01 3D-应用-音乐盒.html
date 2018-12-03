@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>音乐盒</title>
+	<style>
+		body{
+			padding: 0;
+			margin: 0;
+			font-family: "microsft yahei";
+			background-color: #fff;
+		}
+
+		.miusic-box {
+			height: 300px;
+			width: 300px;
+			margin: 50px auto;
+			position: relative;
+			perspective: 1000px;
+			transform-style: preserve-3d;
+		}
+		.miusic-box::after,
+		.miusic-box::before {
+			content: "";
+			display: block;
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			left: 0;
+			top: 0;
+			transition: all 1s;
+			transform-origin: bottom;
+
+		}
+		.miusic-box::before {
+			background: url(images/musicb.jpg);
+		}
+		.miusic-box::after {
+			background: url(images/musict.jpg);
+		}
+		.miusic-box:hover::after{
+			transform: rotateX(-180deg);
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="miusic-box"></div>
+	</div>
+</body>
+</html>

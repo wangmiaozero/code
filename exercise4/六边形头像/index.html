@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		body {
+			background-color: skyblue;
+		}
+		div {
+			width: 330px;
+    		height: 380px;
+    		margin: 50px auto;
+			transform: rotate(-60deg) skewY(30deg) translatez(-1px);
+			overflow: hidden;
+		}
+		a {
+			display: block;
+			width: auto;
+			height: 100%;
+			transform: skewY(-30deg) rotate(60deg);
+			overflow: hidden;
+		}
+		img {
+			width: auto;
+			height: 100%;
+		}
+
+		.box, .box1 {
+			float: left;
+		}
+		.box1 {
+			width: 330px;
+    		height: 380px;
+    		margin: 50px auto;
+			transform: rotate(-60deg) skewY(30deg) translateZ(-1px);
+			overflow: hidden;
+			margin-left: 20px;
+		}
+		.content {
+			width: auto;
+			height: 100%;
+			transform: skewY(-30deg) rotate(60deg);
+			overflow: hidden;
+			background-color: #fff;
+			margin: 0 auto;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<a href="javascript:;">
+			<img src="logo.jpg" alt="">
+		</a>
+	</div>
+
+	<div class="box1">
+		<div class="content"></div>
+	</div>
+</body>
+</html>

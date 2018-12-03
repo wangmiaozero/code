@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        div{
+            margin: 100px auto;
+           transform-style: preserve-3d;
+        }
+      div,div:before{
+          width: 100px;
+          height: 50px;
+
+
+          text-align: center;
+          line-height: 50px;
+
+      }
+      div{
+          transition: all 1s;
+          transform-origin: bottom;
+          position: relative;
+          background-color: blue;
+          float: left;
+      }
+      div:before{
+          content: attr(data-text);
+          position: absolute;
+          left: 0;
+          top: 0;
+          transform: rotateX(90deg)  translateZ(25px) translateY(-25px);
+          background-color: orange;
+      }
+        div:hover{
+            transform:rotateX(-90deg) ;
+        }
+    </style>
+</head>
+<body>
+  <div data-text="前端">前端</div>
+  <div data-text="前端">前端</div>
+  <div data-text="前端">前端</div>
+</body>
+</html>

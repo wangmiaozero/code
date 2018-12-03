@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body{
+            background-color: skyblue;
+            /*perspective: 500px;*/
+
+        }
+        div{
+            width:1000px;
+            height: 500px;
+            border: 1px solid black;
+            margin: 30px auto;
+            text-align: center;
+            transform-style: preserve-3d;
+        }
+        span {
+            display: inline-block;
+            margin-top: 100px;
+            margin-left: 50px;
+            font-size: 100px;
+            font-weight: 900;
+            color: black;
+            position: relative;
+        }
+        /*span:before,span:after{*/
+            /*content: attr(class);*/
+            /*position: absolute;*/
+            /*left: 0;*/
+            /*top: 0;*/
+        /*}*/
+        /*span:before{*/
+            /*color: orange;*/
+            /*z-index: -1;*/
+            /*transition: all 1s;*/
+            /*transform-origin: left;*/
+        /*}*/
+        /*span:after{*/
+            /*color: white;*/
+            /*transition: all 1s;*/
+            /*transform-origin: left;*/
+        /*}*/
+        /*span:hover:after{*/
+            /*transform: rotateY(-80deg) skewY(10deg);*/
+            /*text-shadow:0 0 100px blue ;*/
+        /*}*/
+        /*span:hover:before{*/
+              /*transform:  skewY(30deg);*/
+          /*}*/
+
+        span{
+            text-shadow: 0 0 0 gray;
+            transition: all 1s;
+        }
+        span:hover{
+            text-shadow:  0px 10px  10px gray;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <span class="传">传</span>
+    <span class="智">智</span>
+    <span class="播">播</span>
+    <span class="客">客</span>
+</div>
+</body>
+</html>

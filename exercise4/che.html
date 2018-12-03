@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            margin-bottom: 30px;
+        }
+
+        div>img {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            width: 200px;
+            height: 200px;
+            animation: vehicle 3s 0s infinite linear;
+        }
+
+        @keyframes vehicle {
+            from {
+                transform: translateX(0px) rotateY(0deg);
+            }
+
+            50% {
+                transform: translatex(1000px) ;
+            }
+            60%{transform: translatex(900px) rotateY(-180deg) ;}
+            to {
+                transform: translateX(0px) rotateY(-180deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <img src="./car.jpg" alt="">
+    </div>
+    <div>
+        <img src="./car.jpg" alt="">
+    </div>
+    <div>
+        <img src="./car.jpg" alt="">
+    </div>
+</body>
+
+</html>
