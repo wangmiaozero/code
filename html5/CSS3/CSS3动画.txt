@@ -144,7 +144,7 @@ column-count:3;
         1、动画的实现
             animation-name: moveTest;
             animation-duration: 2s;
-
+		scale放大
             @keyframes  moveTest{
                 0%{}
                 20%{}
@@ -213,3 +213,10 @@ column-count:3;
         a:active{
             加上旋转  此时不会产生有连续的动画  ====需要加上属性transition 
         }
+
+-------------------------
+border-left-color: red;
+            border-right-color: black;
+            border-top-color: yellow;
+给边框加颜色
+----------------------------
