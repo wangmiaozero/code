@@ -172,5 +172,15 @@ http://www.tuling123.com/register/index.jhtml
 
 
 ---------------</接口对接>-------------------------------
+  $.ajax({
+            type:"GET",
+            url:"http://v.juhe.cn/weather/index",
+            typedata:"json",
+            key:"207f7a074eecbbf504d5c6ae90531828",
+            cityname:"武汉"
+            success:function(res){
+                console.log(res);
+            }
+        })
 
 
