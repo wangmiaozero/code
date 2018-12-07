@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no, initial-scale=1">
+    <!-- <link rel="stylesheet" href="./css//base.css"> -->
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            text-decoration: none
+        }
+        html,body{
+            width: 100%;
+            height: 100%;
+        }
+        .box{
+            width: 100%;
+            height: 100%;
+        }
+        .header{
+            width: 100%;
+            height: 50px;
+            background-color: #eee;
+            position: absolute;
+        }
+        .form{
+            width: 100%;
+            height: 100%;
+            padding: 0 60px;
+            /* position: relative; */
+            box-sizing: border-box;
+            margin-top: 3px;
+        }
+        .form >input{
+            width: 100%;
+            height: 40px;
+            background-color: red;
+            border: 1px solid blue;
+            border-radius: 14px;
+        }
+        .l,.r{
+            position: absolute;
+            top: 0;
+            width: 40px;
+            height: 40px;
+            display: block;
+            background-color: yellow;
+        }
+        .l{
+            left: 0;
+        }
+        .r{
+            right: 0;
+        }
+        .content{
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+            padding-top: 50px;
+           
+        }
+        .left{
+            width: 100px;
+            background-color: blueviolet;
+            height: 100%;
+            float: left;
+        }
+        
+        .right{
+            /* width: 100%; */
+            height: 100%;
+            /* box-sizing: border-box; */
+            padding-left:100px;
+            background-color: chartreuse;
+        }
+    </style>
+</head>
+    <div class="box">
+        <div class="header">
+            <a href="" class="l"></a>
+                <form action="" class="form">
+                    <input type="text" name="" value="" placeholder="请输入内容">
+                </form>
+            <a href="" class="r"></a>
+        </div>
+        <div class="content">
+            <div class="left">aaa</div>
+            <div class="right">ds</div>
+        </div>
+    </div>
+<body>
+</body>
+</html>

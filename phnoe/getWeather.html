@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <table border="1">
+        <thead>
+            <tr>   
+                <th>date时间星期</th>
+                <th>dayPictureUrl白天天气图片</th>
+                <th>nightPictureUrl夜间天气图片</th>
+                <th>temperature温度</th>
+                <th>weather天气状况</th>
+                <th>wind风力风向</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- <tr>
+                <td>周六 03月31日 (实时：12℃)</td>
+                <td><img src="http://api.map.baidu.com/images/weather/day/yin.png" alt=""></td>
+                <td><img src="http://api.map.baidu.com/images/weather/night/duoyun.png" alt=""></td>
+                <td>17 ~ 8℃</td>
+                <td>阴转多云</td>
+                <td>南风微风</td>
+            </tr> -->
+        </tbody>
+    </table>
+    <script type="text/template" id="weatherTemp">
+        <% for(var i=0;i<items.length;i++){ %>
+            <tr>
+                <td><%=items[i].date%></td>
+                <td><img src="<%=items[i].dayPictureUrl%>" alt=""></td>
+                <td><img src="<%=items[i].nightPictureUrl%>" alt=""></td>
+                <td><%=items[i].temperature%></td>
+                <td><%=items[i].weather%></td>
+                <td><%=items[i].wind%></td>
+            </tr>
+        <% }%>
+    </script>
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/template-native.js"></script>
+    <script>
+        $.ajax({
+            type:'post',
+            url:"http://api.map.baidu.com/telematics/v3/weather",    //跨域请求，请求百度的天气预报的接口地址
+            data:{
+                "ak":"zVo5SStav7IUiVON0kuCogecm87lonOj",    //你的开发者令牌口令
+                "location":"武汉",   //城市信息
+                "output":'json'       //后台给你返回的数据
+            },
+            dataType:'jsonp', //开启了跨域请求
+            // jsonpCallback:function(){}
+            success:function(result){
+                console.log(result);
+                var html = template("weatherTemp",{"items":result.results[0].weather_data});
+                document.querySelector("tbody").innerHTML = html;
+            }
+        });
+    </script>
+</body>
+</html>

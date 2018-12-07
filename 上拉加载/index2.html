@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #header {
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 50px;
+            background: #FAA732;
+            text-align: center;
+            line-height: 50px;
+            color: white;
+            font-weight: bold;
+        }
+
+        #main {
+            position: absolute;
+            top: 50px;
+            left: 0px;
+            right: 0px;
+            bottom: 51px;
+            padding: 10px;
+            overflow: auto;
+        }
+
+        #main li {
+            display: flex;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-bottom: 1px solid gray;
+            border-radius: 4px;
+            background: #EEE;
+        }
+
+        #main li img {
+            flex: 50px 0 0;
+            width: 50px;
+            height: 50px;
+            padding: 4px;
+            border: 1px solid green;
+        }
+
+        #main li span {
+            padding-left: 4px;
+            line-height: 24px;
+        }
+
+        #footer {
+            display: flex;
+            position: fixed;
+            left: 0px;
+            bottom: 0px;
+            width: 100%;
+            height: 50px;
+            border-top: 1px solid gray;
+            background: #FAA732;
+        }
+
+        #footer div {
+            flex: 1;
+            text-align: center;
+            line-height: 50px;
+            color: white;
+            font-weight: bold;
+            border-right: 1px solid white;
+        }
+
+        #footer div:nth-child(4) {
+            border: none;
+        }
+
+        #footer .active {
+            background: #0086FF;
+        }
+
+        #loading {
+            position: fixed;
+            left: 50%;
+            bottom: 10%;
+            transform: translate(-50%, 0);
+            width: 50px;
+            /* display: none;  */
+            opacity: 0;
+            /* animation: fade-in; */
+            /* animation: fade-in 1s ; */
+            /* -webkit-animation: fade-in 1s; */
+            /*动画名称*/
+            /* animation-duration: 1s; */
+            /*动画持续时间*/
+            /* -webkit-animation: fade-in 1s; */
+            /*针对webkit内核*/
+
+        }
+
+        @keyframes fade-in {
+            0% {
+                opacity: 0;
+            }
+
+            /*初始状态 透明度为0*/
+            40% {
+                opacity: 1;
+            }
+
+            /*过渡状态 透明度为0*/
+            100% {
+                opacity: 0;
+            }
+
+            /*结束状态 透明度为1*/
+        }
+
+        @-webkit-keyframes fade-in {
+
+            /*针对webkit内核*/
+            0% {
+                opacity: 0;
+            }
+
+            40% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <header id="header">首 页</header>
+    <section id="main">
+        <ul id="list_box">
+        </ul>
+    </section>
+    <img id='loading' src="./loading.gif" alt="">
+    <footer id="footer">
+        <div class="active">首页</div>
+        <div>商城</div>
+        <div>其他</div>
+        <div>我的</div>
+    </footer>
+    <script src="./jquery.min.js"></script>
+    <script>
+        rabbit();
+        var ul ;
+        //添加元素
+        function rabbit() {
+            
+            for (var i = 0; i < 10; i++) {
+                ul = document.querySelector("#list_box");
+                var li = document.createElement("li");
+                var img = document.createElement("img");
+                var span = document.createElement("span");
+                span.innerText = ("我是span");
+                img.src = "./tq.png";
+                ul.appendChild(li);
+                li.appendChild(img);
+                li.appendChild(span);
+            }
+        }
+        //判断滚动高度
+        var main=document.querySelector("#main");
+        main.onscroll=function(){ 
+         if(main.scrollTop + ul.scrollHeight+60 >= ul.scrollHeight){
+             main.scrollTop.transition="top 0.5s ease-in-out";
+            setTimeout(function () { 
+                main.scrollTop.transition="top 0.5s ease-in-out";
+                main.scrollTop.top+ul.scrollHeight;
+                rabbit();
+             },500)
+         }
+
+        
+            
+        }
+    
+    </script>
+</body>
+
+</html>
