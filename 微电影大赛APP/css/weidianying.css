@@ -1,0 +1,111 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+.weidianying {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  min-width: 320px;
+  max-width: 640px;
+  display: flex;
+  flex-direction: column;
+}
+.weidianying header {
+  width: 100%;
+  position: relative;
+}
+.weidianying header .box {
+  width: 100%;
+  display: block;
+}
+.weidianying header .box .bannerimg {
+  width: 100%;
+  display: block;
+}
+.weidianying header .search {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  height: 0.7rem;
+  transform: translateX(-50%);
+}
+.weidianying header .search img {
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 0.3rem;
+}
+.weidianying header .search .search1 {
+  position: absolute;
+  width: 0.96rem;
+  height: 0.3rem;
+  transform: translate(-110%, -20%);
+}
+.weidianying header .search .liuyan {
+  position: absolute;
+  width: 0.9rem;
+  height: 0.3rem;
+  transform: translate(0, -20%);
+}
+.weidianying nav ul {
+  background-color: #e6e6e6;
+  overflow: hidden;
+}
+.weidianying nav ul li {
+  width: 50%;
+  height: 0.5rem;
+  font-size: 0.2rem;
+  float: left;
+  line-height: 0.5rem;
+  text-align: center;
+}
+.weidianying nav ul .current {
+  border-bottom: 2px solid red;
+}
+.weidianying main {
+  flex: 1;
+  overflow: auto;
+}
+.weidianying main ul {
+  overflow: hidden;
+  padding: 0.07rem 0.15rem;
+}
+.weidianying main ul li {
+  width: 2rem;
+  float: left;
+  border: 1px solid red;
+  padding: 0.05rem;
+  margin-bottom: 0.1rem;
+}
+.weidianying main ul li:nth-child(3n-1) {
+  margin: 0 0.5%;
+}
+.weidianying main ul li a {
+  width: 100%;
+  display: block;
+}
+.weidianying main ul li a img {
+  width: 100%;
+  display: block;
+  height: 1.48rem;
+}
+.weidianying main ul li h3 {
+  font-size: 0.2rem;
+  text-align: center;
+  padding: 0.01rem;
+}
+.weidianying main ul li p {
+  font-size: 0.18rem;
+}
+.weidianying main ul li div {
+  width: 100%;
+  height: 0.5rem;
+  line-height: 0.5rem;
+  text-align: center;
+  background-color: red;
+  border-radius: 13px;
+  font-size: 0.2rem;
+}

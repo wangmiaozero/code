@@ -1,0 +1,1 @@
+如果系统已经安装DX9，MyDock目录内d3dx9_43.dll文件可以删除pingfangSS字体不需要安装，然后运行dock.exe即可，如果软件文字显示有问题请将dock目录里面的pingfang0.ttf自己手动双击安装

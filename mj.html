@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        ul {
+            padding: 0;
+            margin: 0;
+            width: 90px;
+            height: 90px;
+            background-color: blueviolet;
+            border-radius: 5px;
+            float: left;
+            /* margin: 50px; */
+            /*设置父容器为盒子：会使每一个子元素自动变成伸缩项
+             当子元素的宽度和大于父容器宽度的时候，子元素会自动平均收缩*/
+            display: flex;
+            /*设置子元素的主轴方向上的排列方式*/
+            justify-content: space-around;
+            position: absolute;
+            left: 0;
+            top: 0;   
+           
+        }
+        div>ul:nth-of-type(1){
+            transform: translateZ(45px);
+        }
+        div>ul:nth-of-type(6){
+            transform: translateZ(-45px);
+        }
+        div>ul:nth-last-of-type(2){
+            transform: translateX(45px) rotateY(90deg);
+        }
+        div>ul:nth-last-of-type(3){
+            transform: translateX(-45px) rotateY(-90deg);
+        }
+        div>ul:nth-last-of-type(4){
+            transform: translateY(-45PX) rotateX(90deg);
+        }
+        div>ul:nth-last-of-type(5){
+            transform: translateY(45px) rotateX(-90deg);
+        }
+        div{
+            height: 90px;
+            width: 90px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: rotate3d(1,1,0,-30deg) translate(-50%,-50%);
+            transform-style: preserve-3d; 
+            perspective: 0px;
+            perspective-origin: 0px 0px;
+            animation: Animation 4s linear infinite;
+        }
+        li {
+            width: 20px;
+            height: 20px;
+            background-color: red;
+            border-radius: 50%;
+        }
+
+        ul:nth-child(1) li:nth-child(1) {
+            align-self: center;
+        }
+
+        ul:nth-child(2) {
+            align-items: center;
+            flex-direction: column-reverse;
+        }
+
+        ul:nth-child(3) li {
+            margin: 5px;
+        }
+
+        ul:nth-child(3) li:nth-child(2) {
+            align-self: center;
+        }
+
+        ul:nth-child(3) li:nth-child(3) {
+            align-self: flex-end;
+        }
+
+        ul:nth-child(4) {
+            flex-wrap: wrap;
+        }
+
+        ul:nth-child(4) li {
+            margin: 10px;
+        }
+
+        ul:nth-child(5) {
+            flex-wrap: wrap;
+        }
+
+        ul:nth-child(5) li {
+            margin: 5px 10px;
+        }
+
+        ul:nth-child(5) li:nth-child(3) {
+            margin: 5px 35px;
+        }
+
+        ul:nth-child(6) {
+            flex-wrap: wrap;
+        }
+
+        ul:nth-child(6) li {
+            margin: 5px 10px;
+        }
+        
+
+        /* ul:nth-child(7) ul:nth-child(1) ,
+        ul:nth-child(7) ul:nth-child(2){
+            margin: 0px;
+            height: 45px;
+        }
+        ul:nth-child(7) ul:nth-child(1) li {
+            margin: 5px;
+        }
+        ul:nth-child(7){
+            flex-direction: column;
+        }
+        ul:nth-child(7) ul:nth-child(1) li:nth-child(2) {
+            align-self: center;
+
+        }
+
+        ul:nth-child(7) ul:nth-child(1) li:nth-child(1) {
+            align-self: flex-end;
+        }
+
+        ul:nth-child(7) ul:nth-child(2) {
+            flex-wrap: wrap;
+        }
+
+        ul:nth-child(7) ul:nth-child(2)li {
+            margin: 10px;
+        } */
+        @keyframes Animation{
+            from{
+                transform: rotate3d(1,1,1,-30deg)  rotateY(0);
+            }
+            to{
+                transform: rotate3d(1,1,1,-140deg) rotateY(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+<div>
+        <ul>
+                <li></li>
+            </ul>
+        
+            <ul>
+                <li></li>
+                <li></li>
+            </ul>
+        
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <!-- <ul>
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </ul> -->
+</div>
+</body>
+
+</html>

@@ -1,0 +1,17 @@
+中文简体汉化包:
+	Chinese (Simplified) Language 
+
+
+浏览器预览:
+	open in browser
+	或者 live server
+
+Can I Use，自动检测所写代码能否在相应容器正常编译执行；
+
+JavaScript Snippet Pack，针对js的插件，包含了js的常用语法关键字，很实用；Python，针对python的插件，这是我用过所有python插件中最全的，自动补全功能对有些关键字没有作用，不过还是很好用；
+
+beautify，这款类似于vscode里格式化代码的功能，不错；
+
+vscode-go:官方支持，写go爽到爆
+
+vscode-icon，这款必须要推荐，明显提升效率的小插件，在项目文件多类型多的情况下，找到制定文件会大大缩短时间；

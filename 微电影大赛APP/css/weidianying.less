@@ -1,0 +1,113 @@
+html,body{
+    width: 100%;
+    height: 100%;
+}
+.weidianying{
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    min-width: 320px;
+    max-width: 640px;
+    display: flex;
+    flex-direction: column;
+    header{
+        width: 100%;
+        position: relative;
+       .box{
+            width: 100%;
+            display: block;
+            .bannerimg{
+                width: 100%;
+                display: block;
+            }
+        }
+        .search{
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            height: 0.7rem;
+            transform: translateX(-50%);
+            img{
+                display: block;
+                position: absolute;
+                left: 50%;
+                top: 0.3rem;
+            }
+            .search1{
+                position: absolute;
+                width: 0.96rem;
+                height: 0.3rem;
+                transform: translate(-110%,-20%);
+            }
+            .liuyan{
+                position: absolute;
+                width: 0.9rem;
+                height: 0.3rem;
+                transform: translate(0,-20%);
+            }
+        }
+    }
+   nav{
+       ul{
+           background-color: #e6e6e6;
+           overflow: hidden;
+           li{
+               width: 50%;
+               height: 0.5rem;
+               font-size: 0.2rem;
+               float: left;
+               line-height: 0.5rem;
+               text-align: center;
+
+           }
+           .current{
+               border-bottom: 2px solid red;
+           }
+       }
+   }
+   main{
+       flex: 1;
+       overflow: auto;
+       ul{
+           overflow: hidden;
+           padding: 0.07rem 0.15rem;
+           li{
+               width: 2rem;
+               float: left;
+               border: 1px solid red;
+               padding: 0.05rem;
+               margin-bottom: 0.1rem;
+               &:nth-child(3n-1){
+                   margin: 0 0.5%;
+               }
+               a{
+                   width: 100%;
+                   display: block;
+                   img{
+                       width: 100%;
+                       display: block;
+                       height: 1.48rem;
+                   }
+               }
+               h3{
+                   font-size: 0.2rem;
+                   text-align: center;
+                   padding: 0.01rem;
+               }
+               p{
+                font-size: 0.18rem;
+               };
+               div{
+                   width: 100%;
+                   height: 0.5rem;
+                   line-height: 0.5rem;
+                   text-align: center;
+                   background-color: red;
+                   border-radius: 13px;
+                   font-size: 0.2rem
+               }
+           }
+       }
+   }
+}

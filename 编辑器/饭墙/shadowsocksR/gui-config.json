@@ -1,0 +1,92 @@
+{
+	"configs" : [
+		{
+			"remarks" : "TG频道:t.me/onessr",
+			"id" : "5826D426225897574A72F2AF7BF16CB5",
+			"server" : "103.44.61.61",
+			"server_port" : 7000,
+			"server_udp_port" : 0,
+			"password" : "Qqun204596400",
+			"method" : "aes-128-ctr",
+			"protocol" : "origin",
+			"protocolparam" : "",
+			"obfs" : "plain",
+			"obfsparam" : "",
+			"remarks_base64" : "VEfpopHpgZM6dC5tZS9vbmVzc3I",
+			"group" : "香港",
+			"enable" : true,
+			"udp_over_tcp" : false
+		},
+		{
+			"remarks" : "TG频道t.me/onessr",
+			"id" : "66A2A0379FADAE72C9F98778F21DA455",
+			"server" : "149.28.193.23",
+			"server_port" : 543,
+			"server_udp_port" : 0,
+			"password" : "onessr",
+			"method" : "aes-256-cfb",
+			"protocol" : "auth_aes128_md5",
+			"protocolparam" : "",
+			"obfs" : "tls1.2_ticket_auth",
+			"obfsparam" : "",
+			"remarks_base64" : "VEfpopHpgZN0Lm1lL29uZXNzcg",
+			"group" : "kazusa",
+			"enable" : true,
+			"udp_over_tcp" : false
+		},
+		{
+			"remarks" : "",
+			"id" : "06F296392FABA307C8B877C399EB4F5A",
+			"server" : "server host",
+			"server_port" : 8388,
+			"server_udp_port" : 0,
+			"password" : "0",
+			"method" : "aes-256-cfb",
+			"protocol" : "origin",
+			"protocolparam" : "",
+			"obfs" : "plain",
+			"obfsparam" : "",
+			"remarks_base64" : "",
+			"group" : "FreeSSR-public",
+			"enable" : true,
+			"udp_over_tcp" : false
+		}
+	],
+	"index" : 2,
+	"random" : false,
+	"sysProxyMode" : 1,
+	"shareOverLan" : false,
+	"localPort" : 1080,
+	"localAuthPassword" : "FndtbOvgWsacng34UZKY",
+	"dnsServer" : "",
+	"reconnectTimes" : 2,
+	"randomAlgorithm" : 3,
+	"randomInGroup" : false,
+	"TTL" : 0,
+	"connectTimeout" : 5,
+	"proxyRuleMode" : 2,
+	"proxyEnable" : false,
+	"pacDirectGoProxy" : false,
+	"proxyType" : 0,
+	"proxyHost" : null,
+	"proxyPort" : 0,
+	"proxyAuthUser" : null,
+	"proxyAuthPass" : null,
+	"proxyUserAgent" : null,
+	"authUser" : null,
+	"authPass" : null,
+	"autoBan" : false,
+	"sameHostForSameTarget" : false,
+	"keepVisitTime" : 180,
+	"isHideTips" : false,
+	"nodeFeedAutoUpdate" : true,
+	"serverSubscribes" : [
+
+	],
+	"token" : {
+
+	},
+	"portMap" : {
+
+	}
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        input{
+            display: block;
+            
+            width: 100px;
+            height: 100px;
+        }
+        .play{
+            background-image: url(./图片1.png);
+        }
+        .pause{
+            background-image: url(./图片2.png); 
+        }
+    </style>
+</head>
+<body>
+   
+    
+    
+    <!-- <audio src="./mp3/aa.mp3" controls loop  id="bgMusic"></audio> -->
+    <input type="button" class="play">
+    <script>
+        var audio = document.createElement("audio");
+        audio.src = "./mp3/aa.mp3";
+        //audio.play();
+        document.querySelector("input").onclick=function(){ 
+             mp3=document.querySelector("input").classList.contains("play");
+            // console.log(mp3);
+           if(mp3){
+            document.querySelector("input").classList.add("pause");
+            document.querySelector("input").classList.remove("play");
+            audio.play();
+           }else {
+            document.querySelector("input").classList.add("play");
+            document.querySelector("input").classList.remove("pause");
+            audio.pause();
+           }
+        }
+      
+    </script>
+</body>
+</html>
