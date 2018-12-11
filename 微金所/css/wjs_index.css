@@ -1,0 +1,106 @@
+/*定义变量*/
+/*头部块样式*/
+.wjs_header {
+  height: 50px;
+  line-height: 50px;
+  border-bottom: 1px solid #ccc;
+}
+.wjs_header .row {
+  height: 100%;
+  text-align: center;
+}
+.wjs_header .row > div:nth-of-type(-n+3) {
+  border-right: 1px solid #ccc;
+}
+.wjs_header .row > div:nth-of-type(-n+3) > .wsj_code {
+  position: relative;
+  display: block;
+}
+.wjs_header .row > div:nth-of-type(-n+3) > .wsj_code > img {
+  position: absolute;
+  top: 49px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 1px solid #ccc;
+  border-top: none;
+  z-index: 999;
+  display: none;
+}
+.wjs_header .row > div:nth-of-type(-n+3) > .wsj_code:hover > img {
+  display: block;
+}
+.wjs_header .row div:nth-last-of-type(1) .btn-danger {
+  background-color: #e92322;
+  border-color: #e92322;
+}
+.wjs_header .row div:nth-last-of-type(1) .btn {
+  padding: 3px 15px;
+}
+.wjs_header .row div:nth-last-of-type(1) .btn-link {
+  color: #333;
+}
+.wjs_header .row div:nth-last-of-type(1) .btn-link:hover {
+  text-decoration: none;
+}
+/*导航样式*/
+.wsj_nav {
+  margin-bottom: 0;
+}
+.wsj_nav .navbar-brand {
+  height: 80px;
+  line-height: 50px;
+}
+.wsj_nav .navbar-brand .wjs_icon {
+  font-size: 40px;
+}
+.wsj_nav .navbar-brand .wjs_icon_logo {
+  color: #e92322;
+}
+.wsj_nav .navbar-brand .wjs_icon_text {
+  color: #333;
+}
+.wsj_nav .navbar-toggle {
+  margin-top: 23px;
+}
+.wsj_nav .navbar-nav li a {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  color: #777;
+  background-color: transparent;
+}
+.wsj_nav .navbar-nav li > a:hover,
+.wsj_nav .navbar-nav li > a:focus {
+  color: #777;
+  border-bottom: 2px solid #e92322;
+}
+.wsj_nav .navbar-nav .active > a,
+.wsj_nav .navbar-nav .active > a:hover,
+.wsj_nav .navbar-nav .active > a:focus {
+  color: #777;
+  border-bottom: 2px solid #e92322;
+  background-color: transparent;
+}
+.wsj_nav .navbar-nav .disabled > a,
+.wsj_nav .navbar-nav .disabled > a:hover,
+.wsj_nav .navbar-nav .disabled > a:focus {
+  color: #777;
+  color: transparent;
+  border-bottom: 2px solid #e92322;
+  background-color: transparent;
+}
+/*轮播图*/
+.wjs_banner .mobileImg {
+  display: block;
+  width: 100%;
+}
+.wjs_banner .mobileImg > img {
+  display: blcok;
+  width: 100%;
+}
+.wjs_banner .pcImage {
+  width: 100%;
+  height: 410px;
+  display: block;
+  background-position: center center;
+  background-size: cover;
+}
