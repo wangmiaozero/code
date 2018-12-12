@@ -1,0 +1,156 @@
+.nav {
+	height: 45px;
+}
+.leftlist {
+	float: left;
+	line-height: 45px;
+	font-size: 16px;
+	color: #000000;
+	font-weight: 700;
+	margin:0 28px;
+}
+.rightlist a{
+	font-family: 'icomoon';
+	font-size: 14px;
+	line-height: 45px;
+}
+.rightlist {
+	float: left;
+	margin: 0 23px;
+}
+.festivallogo {
+	position: absolute;
+	top: 43px;
+    left: 185px;
+	width: 71px;
+	height: 32px;
+	border-left: 1px solid #b1191a;
+}
+.festivallogo img {
+	float:right;
+	width: 56px;
+	height: 32px;
+}
+.sk_hd {
+	height: 120px;
+}
+.sk_hd img {
+	width: 1200px;
+	height: 120px;
+}
+.sk_bd {
+	width: 1213px;
+	margin-top: 25px;
+}
+.sk_goods {
+	float: left;
+	width: 288px;
+	height: 458px;
+	margin-right: 13px;
+	margin-bottom: 13px;
+	border:1px solid transparent;
+	position: relative;
+}
+.sk_goods:hover {
+	border:1px solid #e12228;
+}
+.seckill_mod_goods_img {
+	width: 288px;
+	height: 290px;
+}
+.sk_goods_title {
+	padding: 5px;
+	font-weight: normal;
+	font-size: 14px;
+	color: #747474;
+}
+.sk_goods_price {
+	padding: 0 10px;
+}
+.sk_goods_price em {
+	font-size: 22px;
+	color: #e60012;
+}
+.sk_goods_price del {
+	font-size: 14px;
+	color: #a4a4a4;
+	padding-left: 5px;
+}
+.sk_goods_progress {
+	padding:0 10px;
+}
+.bar{
+	display: inline-block;
+	width: 130px;
+	height: 10px;
+	border:1px solid #e12228;
+	border-radius: 5px;
+	vertical-align: middle;
+	margin:0 10px;
+}
+.sk_goods_progress i {
+	color: #ed282e;
+}
+.bar-in {
+	width: 87%;
+	height: 10px;
+	background-color: #ed282e;
+	vertical-align: middle;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+	border-bottom-left-radius: 4px;
+	border-bottom-right-radius: 4px;
+}
+.sk_goods_buy {
+	height: 50px;
+	background: #b1191a;
+	position: absolute;
+	bottom: -1px;
+}
+.sk_goods_buy-in {
+	display: inline-block;
+	font-size: 20px;
+	width: 288px;
+	line-height: 50px;
+	text-align: center;
+	color: #fff;
+}
+.page {
+	width: 1200px;
+	text-align: center;
+	margin: 0 auto;
+}
+.page_num a {
+	display: inline-block;
+	width: 43px;
+	border:1px solid #ccc;
+	line-height: 43px;
+}
+.page_num .pn_prev,
+.page_num .pn_next{
+	width: 118px;
+	height: 43px;
+	border:1px solid #ccc;
+}
+.page_num .tp {
+	border:1px solid transparent;
+}
+.page_skip input {
+	vertical-align: top;
+	outline: none;
+	width: 43px;
+	line-height: 43px;
+	border:1px solid #ccc;
+	transition: all .8s;
+}
+.page_skip input:focus {
+	width: 80px;
+	border:1px solid skyblue;
+}
+.page_skip button {
+	position: relative;
+	top: -2px;
+	width: 43px;
+	height: 43px;
+	border:1px solid #ccc;
+}

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>
+        请选择地区：
+        <select name="" id="proc">
+            <option value="">--请选择省--</option>
+        </select>
+        <select name="" id="city">
+            <option value="">--请选择市--</option>
+        </select>
+        <select name="" id="dist">
+            <option value="">--请选择区--</option>
+        </select>
+    </p>
+
+    <body>
+
+        <script>
+            //声明省
+            var oProc = ["安徽", "上海", "山东"]; //直接声明array
+            //声明市
+            var oCity = [
+                ["合肥", "淮南", "芜湖"],
+                ["浦东", "闵行", "浦西"],
+                ["济南", "青岛", "枣庄"]
+            ];
+            //声明区
+            var oDist = [
+                [
+                    ["政务区", "庐阳区", "蜀山区"],
+                    ["田家庵区", "大通区", "九龙岗区"],
+                    ["镜湖区", "鸠江区", "三山区"]
+                ],
+                [
+                    ["浦东1", "浦东2", "浦东3"],
+                    ["闵行1", "闵行2", "闵行3"],
+                    ["浦西1", "浦西", "浦西3"]
+                ],
+                [
+                    ["历下区", "天桥区", "长清区"],
+                    ["市南区", "市北区", "李沧区"],
+                    ["薛城区", "市中区", "峄城区"]
+                ]
+            ];
+
+            //   目标：实现三级联动 
+            ///  分析 一下 
+            // 1.    一进来应该加载所有的省的内容  
+            // 2.     选择了省以后 ，动态加载当前省下面的所有的城市 
+            // 3.    选择了城市以后，动态去加载当前城市下面所有的县
+
+
+
+            // 1.    一进来应该加载所有的省的内容  
+            var proc = document.getElementById('proc');
+            var city = document.getElementById('city');
+            var dist = document.getElementById('dist');
+
+            for (var i = 0; i < oProc.length; i++) {
+                var op = document.createElement('option');
+                op.innerText = oProc[i];
+                proc.appendChild(op);
+            }
+
+            // 2.     选择了省以后 ，动态加载当前省下面的所有的城市 
+            proc.onchange = function () {
+
+                if (proc.options.selectedIndex == 0) {  //判断如果都没选中的时候,代码不执行
+                    city.options.length = 1;
+                    dist.options.length = 1;
+                    return false;
+                }
+                city.options.length = 1;
+                dist.options.length = 1;
+                var select = proc.options.selectedIndex; //返回的是当前省被选中的那个索引值 ，这个值是从1 开始
+
+                console.log(select)
+                var index = select - 1;
+
+                for (var j = 0; j < oCity[index].length; j++) {
+                    var cop = document.createElement('option');
+                    cop.innerText = oCity[index][j];
+                    city.appendChild(cop);
+                }
+            }
+            // 3.    选择了城市以后，动态去加载当前城市下面所有的县
+
+            city.onchange = function () {
+                if (city.options.selectedIndex == 0) {
+                    dist.options.length = 1;
+                    return false;
+                }
+
+                dist.options.length = 1;
+
+                var Cselct = city.options.selectedIndex;
+                //这个是是拿到的城市选中
+                console.log(Cselct)
+                // 的那个
+
+                var Sselct = proc.options.selectedIndex // 拿到选中的省的索引  
+    console.log( oDist[Sselct - 1][Cselct - 1].length);
+    
+                for (var i = 0; i < oDist[Sselct - 1][Cselct - 1].length; i++) {
+                    var dop = document.createElement('option');
+                    dop.innerText = oDist[Sselct - 1][Cselct - 1][i];
+                    dist.appendChild(dop);
+                }
+
+            }
+        </script>
+    </body>
+
+</html>

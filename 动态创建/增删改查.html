@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="mv">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <script>
+        //1获取元素
+         //2绑定点击事件
+        //实现目标点击
+         var mv=document.querySelector("#mv");
+      //var mv=document.getElementById("mv")
+       var lis=mv.children;
+        // for(var i=0;i<lis.length;i++){
+        //     if(i%2==0){
+        //         lis[i].style.backgroundColor="red";
+        //     }else{
+        //         lis[i].style.backgroundColor="blue";
+        //     }
+        //     lis[i].onclick=function(){
+        //         var span=document.createElement('span');
+        //         span.innerText='我是span';
+        //         this.appendChild(span);
+        //     }
+        // }
+        //---------------------------------
+        // for(var i=0;i<lis.length;i++){
+        //     if(i%2==0){
+        //         lis[i].style.backgroundColor="red";
+        //     }else{
+        //         lis[i].style.backgroundColor="blue";
+        //     }
+        //     lis[i].onclick=function(e){
+        //         var span=document.createElement('span');
+        //         span.innerText='我是span';
+        //         e.target.appendChild(span);
+        //     }
+        // }
+    //    for(var i = 0; i<lis.length;i++){
+    //        if(i %2==0){
+    //            lis[i].style.backgroundColor="yellow";
+    //        }else{
+    //            lis[i].style.backgroundColor="red";
+    //        }
+    //        lis[i].onclick=function(e){
+    //            var span=document.createElement('span');
+    //            span.innerText='我是帅帅的span';
+    //            e.target.appendChild(span);
+    //        }
+    //    }
+    // //----------------------------------
+    // for(var i =0; i< lis.length;i++){
+    //     if(i%2==0){
+    //         lis[i].backgroundColor='red';
+    //     }else{
+    //         lis[i].style.backgroundColor='green';
+    //     }
+    //     lis[i].onclick=function(){
+    //         var span=document.createElement('span');
+    //         span.innerText='我是span';
+    //         this.innerHTML='我是修改后的';
+    //         this.appendChild(span);
+    //         this.remove(this);
+    //     }
+    // }
+    //---------------------------
+    // for(var i =0; i< lis.length;i++){
+    //     if(i%2==0){
+    //         lis[i].backgroundColor='red';
+    //     }else{
+    //         lis[i].style.backgroundColor='green';
+    //     }
+    //     lis[i].onclick=function(e){
+    //         var span=document.createElement('span');
+    //         span.innerText='我是span121312312';
+    //         e.target.appendChild(span);
+    //         e.target.parentNode.removeChild(this);
+    //     }
+    // }
+//----------------------------------------
+// for(var i =0; i< lis.length;i++){
+//         if(i%2==0){
+//             lis[i].backgroundColor='red';
+//         }else{
+//             lis[i].style.backgroundColor='green';
+//         }
+//         lis[i].onclick=function(e){
+//             var span=document.createElement('span');
+//             span.innerText='我是span121312312';
+//             e.target.appendChild(span);
+           
+//            setTimeout(function (e) {
+//            
+//         }
+//     }
+//-------------------------------------
+// for(var i =0; i< lis.length;i++){
+//         if(i%2==0){
+//             lis[i].backgroundColor='red';
+//         }else{
+//             lis[i].style.backgroundColor='green';
+//         }
+//         lis[i].onclick=function(){
+//             var span=document.createElement('span');
+//             span.innerText='我是span';
+//             this.innerHTML='我是修改后的';
+//             this.appendChild(span);
+//           var that = this;
+//           setTimeout(function(){
+//               that.remove(this)
+//           },2000)
+//         }
+//     }
+///.---------------------------------------------
+
+// for(var i =0; i<lis.length;i++){
+//     if(i % 2 == 0){
+//         lis[i].style.backgroundColor='red';
+//     }else{
+//         lis[i].style.backgroundColor='blue';
+//     }
+//     lis[i].onclick=function(e){
+//         var span=document.createElement('span');
+//         span.innerText='我是span';
+//         e.target.appendChild(span);
+        
+//         setTimeout(function () {
+//             e.target.parentNode.removeChild(e.target);
+//         },2000)
+//     }
+
+// }
+//---------------------------
+// for(var i =0; i<lis.length;i++){
+//     if(i % 2 == 0){
+//         lis[i].style.backgroundColor='red';
+//     }else{
+//         lis[i].style.backgroundColor='blue';
+//     }
+//     lis[i].onclick=function(e){
+//         var span=document.createElement('span');
+//         span.innerText='我是span';
+//         e.target.appendChild(span);
+        
+//         setTimeout(function () {
+//             e.target.parentNode.removeChild(e.target);
+//         },2000)
+//     }
+
+// }
+for(var i=0; i< lis.length;i++){
+    if(i % 2 ==0){
+        lis[i].style.backgroundColor="red"
+    }else{
+        lis[i].style.backgroundColor="yellow";
+    }
+   
+     lis[i].onclick=function(e){
+        var span =document.createElement("span");
+     span.innerText="我是span我是span我是span我是span我是span我是span";
+         e.target.appendChild(span);
+         setTimeout(function () {
+          e.target.parentNode.removeChild(e.target)
+            
+           },2000)
+     }
+}
+
+    </script>
+</body>
+</html>

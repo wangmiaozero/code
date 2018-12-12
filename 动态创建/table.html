@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box table {
+            border-collapse: collapse;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box"></div>
+    <script>
+        //先进行模拟一个数据
+        var json = [{
+                naem: 'zw',
+                age: 19,
+                sex: "男",
+                subject: '语文',
+                scre: 90
+            },
+            {
+                naem: 'zw',
+                age: 19,
+                sex: "男",
+                subject: '语文',
+                scre: 90
+            },
+            {
+                naem: 'zw',
+                age: 19,
+                sex: "男",
+                subject: '语文',
+                scre: 90
+            },
+            {
+                naem: 'zw',
+                age: 19,
+                sex: "男",
+                subject: '语文',
+                scre: 90
+            },
+            {
+                naem: 'zw',
+                age: 19,
+                sex: "男",
+                subject: '语文',
+                scre: 90
+            },
+            {
+                naem: 'zw',
+                age: 19,
+                sex: "男",
+                subject: '语文',
+                scre: 90
+            },
+        ];
+        var headData = ["姓名", "年龄", "性别", "科目", "分数", "操作"];
+        var box = document.querySelector("#box");
+        var table = document.createElement("table");
+        box.appendChild(table);
+        table.style.backgroundColor = "pink";
+        table.style.width = "600px";
+        table.border = "1px";
+        var thead = document.createElement("thead");
+        table.appendChild(thead);
+        var tr = document.createElement("tr");
+        thead.appendChild(tr);
+        for (var i = 0; i < headData.length; i++) {
+            var th = document.createElement("th");
+            th.innerText = headData[i];
+            tr.appendChild(th);
+        }
+        var tbody = document.createElement("tbody");
+        table.appendChild(tbody);
+        for (var j = 0; j < json.length; j++) {
+            var tr = document.createElement("tr");
+            tbody.appendChild(tr);
+            for(var key in json[j]){
+                var td=document.createElement("td");
+                td.innerText=json[j][key];
+                tr.appendChild(td)   
+            }
+            var a=document.createElement('a');
+            var td=document.createElement("td");
+            a.href="javascript:;"
+            a.innerText="删除";
+            tr.appendChild(td);
+            td.appendChild(a);
+            a.onclick=function(e){
+               // tbody.removeChild(e.target.parentNode.parentNode);
+               setTimeout(function () {
+                   e.target.parentNode.parentNode.parentNode.removeChild(e.target.parentNode.parentNode);
+                 },2000)
+            }
+
+        }
+    </script>
+</body>
+
+</html>
